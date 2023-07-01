@@ -8,11 +8,13 @@ import java.util.function.Supplier;
 public class PixelmonInstance extends AnimatedObjectInstance {
 
     public final Supplier<LightingSettings> settingsSupplier;
+    private Matrix4f projectionMatrix;
 
     public Matrix4f[] matrixTransforms;
 
     public PixelmonInstance(Matrix4f transformationMatrix, Matrix4f viewMatrix, String materialId, Supplier<LightingSettings> settingsSupplier) {
         super(transformationMatrix, viewMatrix, materialId);
+        this.projectionMatrix = new Matrix4f();
         this.settingsSupplier = settingsSupplier;
     }
 
@@ -34,5 +36,13 @@ public class PixelmonInstance extends AnimatedObjectInstance {
     @Override
     public Matrix4f[] getTransforms() {
         return matrixTransforms;
+    }
+
+    public Matrix4f getProjectionMatrix() {
+        return projectionMatrix;
+    }
+
+    public void setProjectionMatrix(Matrix4f projectionMatrix) {
+        this.projectionMatrix.set(projectionMatrix);
     }
 }

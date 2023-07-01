@@ -51,6 +51,7 @@ public class CompiledModel {
 
         Minecraft.getInstance().getProfiler().push("create_model_instance");
         MinecraftClientGameProvider.projMatrix = projectionMatrix;
+        if(instance instanceof PixelmonInstance pixelmonInstance) pixelmonInstance.setProjectionMatrix(projectionMatrix);
         objectManager.add(this.renderObject, instance);
         Minecraft.getInstance().getProfiler().pop();
     }

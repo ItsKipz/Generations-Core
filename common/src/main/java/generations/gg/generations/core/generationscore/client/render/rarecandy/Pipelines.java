@@ -53,7 +53,7 @@ public class Pipelines {
         var BASE = new Pipeline.Builder()
                 .supplyUniform("viewMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()))
                 .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
-                .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(MinecraftClientGameProvider.projMatrix))
+                .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(ctx.instance() instanceof PixelmonInstance instance ? instance.getProjectionMatrix() : MinecraftClientGameProvider.projMatrix))
                 .supplyUniform("diffuse", ctx -> {
                     ctx.object().getMaterial(ctx.instance().materialId()).getDiffuseTexture().bind(0);
                     ctx.uniform().uploadInt(0);

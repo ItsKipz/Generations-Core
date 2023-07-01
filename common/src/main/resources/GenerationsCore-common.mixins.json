@@ -9,7 +9,8 @@
   ],
   "client": [
 	"client.LevelRendererMixin",
-    "client.PokemonEntityMixin"
+    "client.PokemonEntityMixin",
+    "client.RenderSystemMixin"
   ],
   "injectors": {
 	"defaultRequire": 1
