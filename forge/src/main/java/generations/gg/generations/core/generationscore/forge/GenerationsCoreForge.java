@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge;
 
-import com.cobblemon.mod.common.NetworkManager;
 import dev.architectury.platform.forge.EventBuses;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
