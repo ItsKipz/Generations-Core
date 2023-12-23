@@ -6,7 +6,6 @@ import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import gg.generations.rarecandy.pokeutils.BlendType;
-import gg.generations.rarecandy.pokeutils.CullType;
 import gg.generations.rarecandy.pokeutils.reader.TextureLoader;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
 import gg.generations.rarecandy.renderer.animation.GfbAnimationInstance;
@@ -14,13 +13,10 @@ import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
-import gg.generations.rarecandy.tools.gui.GuiPipelines;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
-import org.joml.Matrix4f;
 import org.joml.Vector3f;
-import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL11C;
 import org.lwjgl.opengl.GL13C;
 
@@ -41,6 +37,7 @@ public class Pipelines {
             this.resourceManager = resourceManager;
             this.pipelines = pipelines;
         }
+
         public void register(String name, Function<ResourceManager, Function<String, Pipeline>> function) {
             pipelines.put(name, function.apply(resourceManager));
         }
@@ -49,22 +46,16 @@ public class Pipelines {
     private static final Map<String, Function<String, Pipeline>> PIPELINE_MAP = new HashMap<>();
     public static final Vector3f GLOBAL_LIGHT = new Vector3f(0, 2, 0);
 
-    private static boolean initalized = false;
-
-    private static String activeShaderGroup = "animated_block";
-
-    public static void setActiveShaderGroup(String group) {
-        activeShaderGroup = PIPELINE_MAP.containsKey(group) ? group : "animated_block";
-    }
+    private static boolean initialized = false;
 
     /**
      * Called on first usage of RareCandy to reduce lag later on
      */
     public static void onInitialize(ResourceManager manager) {
-        if(!initalized) {
+        if (!initialized) {
             REGISTER.invoker().accept(new PipelineRegister(manager, PIPELINE_MAP));
-            initalized = true;
-            PipelineRegistry.setFunction(s -> Pipelines.getPipeline(activeShaderGroup).apply(s));
+            initialized = true;
+            PipelineRegistry.setFunction(s -> Pipelines.getPipeline("pokemon").apply(s));
         }
     }
 
@@ -81,10 +72,8 @@ public class Pipelines {
                     if (ctx.instance() instanceof AnimatedObjectInstance instance) {
                         if (instance.currentAnimation instanceof GfbAnimationInstance gfbAnimation) {
                             ctx.uniform().uploadVec2f(gfbAnimation.getEyeOffset(ctx.getMaterial().getMaterialName()));
-                        }
-                        else ctx.uniform().uploadVec2f(AnimationController.NO_OFFSET);
-                    }
-                    else ctx.uniform().uploadVec2f(AnimationController.NO_OFFSET);
+                        } else ctx.uniform().uploadVec2f(AnimationController.NO_OFFSET);
+                    } else ctx.uniform().uploadVec2f(AnimationController.NO_OFFSET);
                 });
 
 
@@ -92,7 +81,7 @@ public class Pipelines {
                 .supplyUniform("diffuse", ctx -> {
                     var variant = ctx.instance().variant();
 
-                    ITexture texture = isStatueMaterial(variant) ? getTexture(variant) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
+                    ITexture texture = /*isStatueMaterial(variant)*/false ? getTexture(variant) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
                     if (texture == null) texture = TextureLoader.instance().getNuetralFallback();
 
                     texture.bind(0);
@@ -100,15 +89,32 @@ public class Pipelines {
                 })
                 .prePostDraw(material -> {
                     material.cullType().enable();
-                    if(material.blendType() == BlendType.Regular) {
+                    if (material.blendType() == BlendType.Regular) {
                         RenderSystem.enableBlend();
                         RenderSystem.defaultBlendFunc();
                     }
                 }, material -> {
                     material.cullType().disable();
-                    if(material.blendType() == BlendType.Regular) {
+                    if (material.blendType() == BlendType.Regular) {
                         RenderSystem.disableBlend();
                     }
+                });
+
+        register.register("pokemon",
+                manager -> {
+                    var solid = new Pipeline.Builder(BASE)
+                            .shader(read(manager, GenerationsCore.id("shaders/animated/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/animated/animated.fs.glsl")))
+                            .supplyUniform("lightPosition", ctx -> ctx.uniform().uploadVec3f(new Vector3f(0, 1, 0)))
+                            .supplyUniform("intColor", ctx -> ctx.uniform().uploadInt(0))
+                            .supplyUniform("shineDamper", ctx -> ctx.uniform().uploadFloat(0.1f))
+                            .supplyUniform("reflectivity", ctx -> ctx.uniform().uploadFloat(0.1f))
+                            .supplyUniform("diffuseColorMix", ctx -> ctx.uniform().uploadFloat(0f))
+                            .build();
+
+                    return s -> switch (s) {
+                        // TODO: ...
+                        default -> solid;
+                    };
                 });
 
         register.register("animated_block",
@@ -116,7 +122,7 @@ public class Pipelines {
                     var LIGHT = new Pipeline.Builder(BASE)
                             .supplyUniform("lightmap", ctx -> {
                                 ctx.uniform().uploadInt(1);
-                                GL13C.glActiveTexture('蓀' + 1);
+                                GL13C.glActiveTexture(GL13C.GL_TEXTURE0 + 1);
                                 GL11C.glBindTexture(3553, ((ILightTexture) Minecraft.getInstance().gameRenderer.lightTexture()).getTextureId());
                                 RenderSystem.texParameter(3553, 10241, 9729);
                                 RenderSystem.texParameter(3553, 10240, 9729);
@@ -171,7 +177,8 @@ public class Pipelines {
                             .supplyUniform("layer", ctx -> {
                                 var texture = ctx.getTexture("layer");
 
-                                if (texture == null || isStatueMaterial(ctx.instance().variant())) texture = TextureLoader.instance().getDarkFallback();
+                                if (texture == null || isStatueMaterial(ctx.instance().variant()))
+                                    texture = TextureLoader.instance().getDarkFallback();
 
 
                                 texture.bind(2);
@@ -179,7 +186,8 @@ public class Pipelines {
                             }).supplyUniform("mask", ctx -> {
                                 var texture = ctx.getTexture("mask");
 
-                                if (texture == null || isStatueMaterial(ctx.instance().variant())) texture = TextureLoader.instance().getDarkFallback();
+                                if (texture == null || isStatueMaterial(ctx.instance().variant()))
+                                    texture = TextureLoader.instance().getDarkFallback();
 
                                 texture.bind(3);
                                 ctx.uniform().uploadInt(3);

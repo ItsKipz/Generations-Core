@@ -24,6 +24,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModelRegistry {
+
     private static final Function<GltfModel, Supplier<MeshObject>> MESH_OBJECT_SUPPLIER = gltfModel -> () -> {
         if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
         return new AnimatedMeshObject();
@@ -34,7 +35,7 @@ public class ModelRegistry {
             try {
                 var resourceManager = Minecraft.getInstance().getResourceManager();
                 var is = resourceManager.getResource(pair.a()).orElseGet(() -> {
-                    System.out.println("Oh No: " + pair.a + "/" + pair.b);
+                    System.out.println("Failed to get Pokemon model: " + pair.a + " with pipeline " + pair.b);
                     return resourceManager.getResource(GenerationsCore.id("models/pokemon/substitute.pk")).orElseThrow();
                 }).open();
                 return new CompiledModel(pair.a, is, Pipelines.getPipeline(pair.b()), MESH_OBJECT_SUPPLIER);
@@ -80,7 +81,7 @@ public class ModelRegistry {
 //        stack.translate(0.5f, 0.0f, 0.5f);
     }
 
-    private record Pair<A, B>(A a, B b) {}
+    public record Pair<A, B>(A a, B b) {}
 
     public static RareCandy getWorldRareCandy() {
         //RareCandy.DEBUG_THREADS = true;

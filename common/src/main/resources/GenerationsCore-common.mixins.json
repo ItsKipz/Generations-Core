@@ -12,7 +12,8 @@
   "client": [
     "client.LevelRendererMixin",
     "client.LightTextureMixin",
-    "client.PokemonEntityMixin"
+    "client.PokemonEntityMixin",
+    "client.PokemonRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

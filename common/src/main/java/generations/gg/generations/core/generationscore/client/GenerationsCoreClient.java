@@ -22,6 +22,7 @@ import generations.gg.generations.core.generationscore.client.render.entity.*;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.Texture;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
@@ -122,20 +123,20 @@ public class GenerationsCoreClient {
     }
 
     private static void setupClient(Minecraft event) {
-        event.submit(() -> {
+        event.tell(() -> {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
             TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader(event));
-            textureLoader.initialize(event.getResourceManager());
+//            textureLoader.initialize(event.getResourceManager()); dynamic/statue:concrete_1 invalid character. Fix it.
 
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
         });
 
-        ItemPropertiesRegistry.registerGeneric(GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
+        ItemPropertiesRegistry.registerGeneric(id("type"), (arg, arg2, arg3, i) -> {
             var type = ((MoveTeachingItem) arg.getItem()).getType(arg);
 
             if(type == ElementalTypes.INSTANCE.getNORMAL()) return 0.00f;
@@ -159,8 +160,8 @@ public class GenerationsCoreClient {
             else return 0.00f;
         });
 
-        ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
-        ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
+        ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
+        ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), id("flute_type"), (arg, arg2, arg3, i) -> {
             ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
 
             if (isItem(GenerationsItems.ICY_WING, stack)) return 0.125f;
@@ -417,7 +418,7 @@ public class GenerationsCoreClient {
 
         @Override
         public void register(String s, TextureReference textureReference) {
-            var location = Minecraft.getInstance().getTextureManager().register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
+            var location = Minecraft.getInstance().getTextureManager().register(s, new Texture(textureReference));
             MAP.putIfAbsent(s, location);
         }
 
