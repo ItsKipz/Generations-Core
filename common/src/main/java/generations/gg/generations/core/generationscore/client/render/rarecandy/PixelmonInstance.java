@@ -32,10 +32,6 @@ public class PixelmonInstance extends AnimatedObjectInstance implements BlockLig
     public float diffuseColorMix() {
         return settingsSupplier.get().diffuseColorMix();
     }
-    @Override
-    public Matrix4f[] getTransforms() {
-        return matrixTransforms;
-    }
 
     @Override
     public int getLight() {

@@ -42,6 +42,9 @@ public abstract class PokemonRendererMixin extends MobRenderer<PokemonEntity, En
         });
 
         var model = MODEL_MAP.get(GenerationsCore.id("wooper"));
-        ModelRegistry.getWorldRareCandy().objectManager.add(model.renderObject, ((PixelmonInstanceProvider) (Object) entity).getInstance());
+        var instance = ((PixelmonInstanceProvider) (Object) entity).getInstance();
+
+        instance.transformationMatrix().set(stack.last().pose());
+        ModelRegistry.getWorldRareCandy().objectManager.add(model.renderObject, instance);
     }
 }
