@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsAxeItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.core.registries.Registries;
@@ -34,8 +35,8 @@ public class GenerationsCreativeTabs {
     public static RegistrySupplier<CreativeModeTab> FUNCTIONAL_BLOCKS = create("functional_blocks", () -> GenerationsUtilityBlocks.TABLE_PC);
 
     public static RegistrySupplier<CreativeModeTab> TOOLS_AND_UTILITIES = create("tools_and_utilities", () -> GenerationsItems.SUPER_ROD);
-    public static RegistrySupplier<CreativeModeTab> COMBAT = create("combat", () -> GenerationsItems.CRYSTAL);
-    public static RegistrySupplier<CreativeModeTab> INGREDIENTS = create("ingredients", () -> GenerationsItems.CRYSTAL);
+    public static RegistrySupplier<CreativeModeTab> COMBAT = create("combat", () -> GenerationsItems.RUBY);
+    public static RegistrySupplier<CreativeModeTab> INGREDIENTS = create("ingredients", () -> GenerationsItems.GALARICA_TWIG);
     public static RegistrySupplier<CreativeModeTab> CONSUMABLES = create("consumables", () -> GenerationsItems.ABILITY_CAPSULE);
     public static RegistrySupplier<CreativeModeTab> HELD_ITEMS = create("held_items", () -> GenerationsItems.ABILITY_SHIELD);
     public static RegistrySupplier<CreativeModeTab> GIMMICK_ITEMS = create("gimmick_items", () -> GenerationsItems.VENUSAURITE);
