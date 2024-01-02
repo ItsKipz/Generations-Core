@@ -50,43 +50,409 @@ public class GenerationsItems {
     //Tools & Utilities
         //Tools
         //Watering Can
-    public static final RegistrySupplier<Item> SQUIRT_BOTTLE = register("squirt_bottle", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> WAILMER_PAIL = register("wailmer_pail", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> SPRAYDUCK = register("sprayduck", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> SPRINK_LOTAD = register("sprink_lotad", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> SQUIRT_BOTTLE = register("squirt_bottle", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> WAILMER_PAIL = register("wailmer_pail", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> SPRAYDUCK = register("sprayduck", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> SPRINK_LOTAD = register("sprink_lotad", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
         //Rod
     /*, TieredFishingHookEntity.Teir.OLD*/
-    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.OLD), GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.GOOD), GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.OLD), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.GOOD), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
     /*, TieredFishingHookEntity.Teir.SUPER*/
-    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.SUPER), GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.SUPER), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
     /*, TieredFishingHookEntity.Teir.RUBY*/
-    public static final RegistrySupplier<RubyRodItem> RUBY_ROD = register("ruby_rod", properties -> new RubyRodItem(properties, TieredFishingHookEntity.Teir.RUBY), GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<RubyRodItem> RUBY_ROD = register("ruby_rod", properties -> new RubyRodItem(properties, TieredFishingHookEntity.Teir.RUBY), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
         //Camera
+    public static final RegistrySupplier<Item> CAMERA = register("camera", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> SNAP_CAMERA = register("snap_camera", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> FILM = register("film", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
         //Other
+    public static final RegistrySupplier<Item> REPEL = register("repel", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> SUPER_REPEL = register("super_repel", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> MAX_REPEL = register("max_repel", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> LURE_MODULE = register("lure_module", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> POKEDEX = register("pokedex", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
         //Gimmick
+    public static final RegistrySupplier<Item> ROTOM_CATALOG = register("rotom_catalog", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> MEGA_RING = register("mega_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> Z_RING = register("z_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> UNCHARGED_DYNAMAX_BAND = register("uncharged_dynamax_band", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    //public static final RegistrySupplier<Item> TERA_ORB = register("tera_orb", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> ZYGARDE_CUBE = register("zygarde_cube", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<MeltanBox> MELTAN_BOX = register("meltan_box", properties -> new MeltanBox(properties.stacksTo(1).durability(200)), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> MELTAN_BOX_CHARGED = register("meltan_box_charged", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)) {
+        @Override
+        public boolean isFoil(@NotNull ItemStack stack) {
+            return true;
+        }
+    }, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
         //Charm
+    public static final RegistrySupplier<Item> SHINY_CHARM = register("shiny_charm", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> OVAL_CHARM = register("oval_charm", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> CATCHING_CHARM = register("catching_charm", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> EXP_CHARM = register("exp_charm", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> MARK_CHARM = register("mark_charm", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> GLIMMERING_CHARM = register("glimmering_charm", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
         //Other
+    public static final RegistrySupplier<Item> POKEMON_WAND = register("pokemon_wand", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueEditorItem::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> NPC_WAND = register("npc_wand", NpcWandItem::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", NpcPathTool::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> ZONE_WAND = register("zone_wand", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> GIFT_BOX = register("gift_box", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> LEGEND_FINDER = register("legend_finder", Item::new, GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
         //Boat
+    public static final RegistrySupplier<Item> GHOST_BOAT_ITEM = register("ghost_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.GHOST), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.GHOST), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> ULTRA_DARK_BOAT_ITEM = register("ultra_dark_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> ULTRA_DARK_CHEST_BOAT_ITEM = register("ultra_dark_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_BOAT_ITEM = register("ultra_jungle_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+        //Music
+    public static final RegistrySupplier<Item> POKE_WALKMON = register("poke_walkmon", properties -> new WalkmonItem(properties, 1, "poke_walkmon"), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), GenerationsCreativeTabs.TOOLS_AND_UTILITIES);
+    public static final RegistrySupplier<Item> AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", GenerationsSounds.AZALEA_TOWN, 4000);
+    public static final RegistrySupplier<Item> CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", GenerationsSounds.CASCARRAFA_CITY, 3396);
+    public static final RegistrySupplier<Item> CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", GenerationsSounds.CERULEAN_CITY, 3677);
+    public static final RegistrySupplier<Item> ETERNA_CITY_DISC = createMusicDisc("eterna_city_disc", GenerationsSounds.ETERNA_CITY, 2720);
+    public static final RegistrySupplier<Item> GOLDENROD_CITY_DISC = createMusicDisc("goldenrod_city_disc", GenerationsSounds.GOLDENROD_CITY, 3642);
+    public static final RegistrySupplier<Item> ICIRRUS_CITY_DISC = createMusicDisc("icirrus_city_disc", GenerationsSounds.ICIRRUS_CITY, 2958);
+    public static final RegistrySupplier<Item> JUBILIFE_VILLAGE_DISC = createMusicDisc("jubilife_village_disc", GenerationsSounds.JUBILIFE_VILLAGE, 4048);
+    public static final RegistrySupplier<Item> LAKE_OF_RAGE_DISC = createMusicDisc("lake_of_rage_disc", GenerationsSounds.LAKE_OF_RAGE, 2773);
+    public static final RegistrySupplier<Item> LAVERRE_CITY_DISC = createMusicDisc("laverre_city_disc", GenerationsSounds.LAVERRE_CITY, 5626);
+    public static final RegistrySupplier<Item> LILLIE_DISC = createMusicDisc("lillie_disc", GenerationsSounds.LILLIE, 6241);
+    public static final RegistrySupplier<Item> POKEMON_CENTER_DISC = createMusicDisc("pokemon_center_disc", GenerationsSounds.POKEMON_CENTER, 4806);
+    public static final RegistrySupplier<Item> ROUTE_228_DISC = createMusicDisc("route_228_disc", GenerationsSounds.ROUTE_228, 8374);
+    public static final RegistrySupplier<Item> SLUMBERING_WEALD_DISC = createMusicDisc("slumbering_weald_disc", GenerationsSounds.SLUMBERING_WEALD, 5242);
+    public static final RegistrySupplier<Item> SURF_DISC = createMusicDisc("surf_disc", GenerationsSounds.SURF, 5230);
+    public static final RegistrySupplier<Item> VERMILION_CITY_DISC = createMusicDisc("vermilion_city_disc", GenerationsSounds.VERMILION_CITY, 4320);
+    public static final RegistrySupplier<Item> CYNTHIA_DISC = createMusicDisc("cynthia_disc", GenerationsSounds.CYNTHIA, 7705);
+    public static final RegistrySupplier<Item> DEOXYS_DISC = createMusicDisc("deoxys_disc", GenerationsSounds.DEOXYS, 8290);
+    public static final RegistrySupplier<Item> IRIS_DISC = createMusicDisc("iris_disc", GenerationsSounds.IRIS, 5824);
+    public static final RegistrySupplier<Item> KANTO_DISC = createMusicDisc("kanto_disc", GenerationsSounds.KANTO, 6748);
+    public static final RegistrySupplier<Item> LUSAMINE_DISC = createMusicDisc("lusamine_disc", GenerationsSounds.LUSAMINE, 6756);
+    public static final RegistrySupplier<Item> NEMONA_DISC = createMusicDisc("nemona_disc", GenerationsSounds.NEMONA, 3169);
+    public static final RegistrySupplier<Item> NESSA_DISC = createMusicDisc("nessa_disc", GenerationsSounds.NESSA, 5276);
+    public static final RegistrySupplier<Item> PENNY_DISC = createMusicDisc("penny_disc", GenerationsSounds.PENNY, 5342);
+    public static final RegistrySupplier<Item> RIVAL_DISC = createMusicDisc("rival_disc", GenerationsSounds.RIVAL, 4426);
+    public static final RegistrySupplier<Item> SADA_AND_TURO_DISC = createMusicDisc("sada_and_turo_disc", GenerationsSounds.SADA_AND_TURO, 6974);
+    public static final RegistrySupplier<Item> SOUTH_PROVINCE_DISC = createMusicDisc("south_province_disc", GenerationsSounds.SOUTH_PROVINCE, 4285);
+    public static final RegistrySupplier<Item> TEAM_ROCKET_DISC = createMusicDisc("team_rocket_disc", GenerationsSounds.TEAM_ROCKET, 3729);
+    public static final RegistrySupplier<Item> ULTRA_NECROZMA_DISC = createMusicDisc("ultra_necrozma_disc", GenerationsSounds.ULTRA_NECROZMA, 5925);
+    public static final RegistrySupplier<Item> XY_LEGENDARY_DISC = createMusicDisc("xy_legendary_disc", GenerationsSounds.XY_LEGENDARY, 5216);
+    public static final RegistrySupplier<Item> ZINNIA_DISC = createMusicDisc("zinnia_disc", GenerationsSounds.ZINNIA, 6409);
+    public static final RegistrySupplier<Item> LAVENDER_TOWN_DISC = createMusicDisc("lavender_town_disc", GenerationsSounds.LAVENDER_TOWN, 7376);
+    public static final RegistrySupplier<Item> LUGIA_DISC = createMusicDisc("lugia_disc", GenerationsSounds.LUGIA, 6825);
+    public static final RegistrySupplier<Item> MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", GenerationsSounds.MT_PYRE, 4372);
 
-    //Combat
-        //Sword
-        //Axe
-        //Armor
 
     //Ingredients
+        //Wild
+    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
         //Gems
+    public static final RegistrySupplier<Item> RUBY = register("ruby", Item::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<Item> CRYSTAL = register("crystal", Item::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<Item> SILICON = register("silicon", Item::new, GenerationsCreativeTabs.INGREDIENTS);
         //Ingot/Plate
+    public static final RegistrySupplier<Item> COPPER_PLATE = register("copper_plate", Item::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<Item> Z_INGOT = register("z_ingot", Item::new, GenerationsCreativeTabs.INGREDIENTS);
         //Other
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> ORB = register("orb", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_SHARD = register("enigma_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4)), GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_FRAGMENT = register("enigma_fragment", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4).fireResistant() /* just incase it falls into lava while in nether*/), GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_WILLPOWER = register("shard_of_willpower", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_EMOTION = register("shard_of_emotion", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_KNOWLEDGE = register("shard_of_knowledge", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> LIGHT_SOUL = register("light_soul", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> DARK_SOUL = register("dark_soul", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> DRAGON_SOUL = register("dragon_soul", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SPARKLING_SHARD = register("sparkling_shard", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.INGREDIENTS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> RUSTY_FRAGMENT = register("rusty_fragment", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.INGREDIENTS);
 
     //Awards
         //Badge
+    public static final RegistrySupplier<Item> BOULDER_BADGE = createBadge("boulder_badge", null);
+    public static final RegistrySupplier<Item> CASCADE_BADGE = createBadge("cascade_badge", null);
+    public static final RegistrySupplier<Item> THUNDER_BADGE = createBadge("thunder_badge", null);
+    public static final RegistrySupplier<Item> RAINBOW_BADGE = createBadge("rainbow_badge", null);
+    public static final RegistrySupplier<Item> SOUL_BADGE = createBadge("soul_badge", null);
+    public static final RegistrySupplier<Item> MARSH_BADGE = createBadge("marsh_badge", null);
+    public static final RegistrySupplier<Item> VOLCANO_BADGE = createBadge("volcano_badge", null);
+    public static final RegistrySupplier<Item> EARTH_BADGE = createBadge("earth_badge", null);
+    public static final RegistrySupplier<Item> ZEPHYR_BADGE = createBadge("zephyr_badge", null);
+    public static final RegistrySupplier<Item> HIVE_BADGE = createBadge("hive_badge", null);
+    public static final RegistrySupplier<Item> PLAIN_BADGE = createBadge("plain_badge", null);
+    public static final RegistrySupplier<Item> FOG_BADGE = createBadge("fog_badge", null);
+    public static final RegistrySupplier<Item> STORM_BADGE = createBadge("storm_badge", null);
+    public static final RegistrySupplier<Item> MINERAL_BADGE = createBadge("mineral_badge", null);
+    public static final RegistrySupplier<Item> GLACIER_BADGE = createBadge("glacier_badge", null);
+    public static final RegistrySupplier<Item> RISING_BADGE = createBadge("rising_badge", null);
+    public static final RegistrySupplier<Item> STONE_BADGE = createBadge("stone_badge", null);
+    public static final RegistrySupplier<Item> KNUCKLE_BADGE = createBadge("knuckle_badge", null);
+    public static final RegistrySupplier<Item> DYNAMO_BADGE = createBadge("dynamo_badge", null);
+    public static final RegistrySupplier<Item> HEAT_BADGE = createBadge("heat_badge", null);
+    public static final RegistrySupplier<Item> BALANCE_BADGE = createBadge("balance_badge", null);
+    public static final RegistrySupplier<Item> FEATHER_BADGE = createBadge("feather_badge", null);
+    public static final RegistrySupplier<Item> MIND_BADGE = createBadge("mind_badge", null);
+    public static final RegistrySupplier<Item> RAIN_BADGE = createBadge("rain_badge", null);
+    public static final RegistrySupplier<Item> COAL_BADGE = createBadge("coal_badge", null);
+    public static final RegistrySupplier<Item> FOREST_BADGE = createBadge("forest_badge", null);
+    public static final RegistrySupplier<Item> COBBLE_BADGE = createBadge("cobble_badge", null);
+    public static final RegistrySupplier<Item> FEN_BADGE = createBadge("fen_badge", null);
+    public static final RegistrySupplier<Item> RELIC_BADGE = createBadge("relic_badge", null);
+    public static final RegistrySupplier<Item> MINE_BADGE = createBadge("mine_badge", null);
+    public static final RegistrySupplier<Item> ICICLE_BADGE = createBadge("icicle_badge", null);
+    public static final RegistrySupplier<Item> BEACON_BADGE = createBadge("beacon_badge", null);
+    public static final RegistrySupplier<Item> TRIO_BADGE = createBadge("trio_badge", null);
+    public static final RegistrySupplier<Item> BASIC_BADGE = createBadge("basic_badge", null);
+    public static final RegistrySupplier<Item> INSECT_BADGE = createBadge("insect_badge", null);
+    public static final RegistrySupplier<Item> BOLT_BADGE = createBadge("bolt_badge", null);
+    public static final RegistrySupplier<Item> QUAKE_BADGE = createBadge("quake_badge", null);
+    public static final RegistrySupplier<Item> JET_BADGE = createBadge("jet_badge", null);
+    public static final RegistrySupplier<Item> FREEZE_BADGE = createBadge("freeze_badge", null);
+    public static final RegistrySupplier<Item> LEGEND_BADGE = createBadge("legend_badge", null);
+    public static final RegistrySupplier<Item> BUG_BADGE = createBadge("bug_badge", null);
+    public static final RegistrySupplier<Item> CLIFF_BADGE = createBadge("cliff_badge", null);
+    public static final RegistrySupplier<Item> RUMBLE_BADGE = createBadge("rumble_badge", null);
+    public static final RegistrySupplier<Item> PLANT_BADGE = createBadge("plant_badge", null);
+    public static final RegistrySupplier<Item> VOLTAGE_BADGE = createBadge("voltage_badge", null);
+    public static final RegistrySupplier<Item> FAIRY_BADGE = createBadge("fairy_badge", null);
+    public static final RegistrySupplier<Item> PSYCHIC_BADGE = createBadge("psychic_badge", null);
+    public static final RegistrySupplier<Item> ICEBERG_BADGE = createBadge("iceberg_badge", null);
+    public static final RegistrySupplier<Item> GRASS_BADGE = createBadge("grass_badge", null);
+    public static final RegistrySupplier<Item> WATER_BADGE = createBadge("water_badge", null);
+    public static final RegistrySupplier<Item> FIRE_BADGE = createBadge("fire_badge", null);
+    public static final RegistrySupplier<Item> FIGHTING_BADGE = createBadge("fighting_badge", null);
+    public static final RegistrySupplier<Item> GHOST_BADGE = createBadge("ghost_badge", null);
+    public static final RegistrySupplier<Item> FAIRY_BADGE_2 = createBadge("fairy_badge2", null);
+    public static final RegistrySupplier<Item> ROCK_BADGE = createBadge("rock_badge", null);
+    public static final RegistrySupplier<Item> ICE_BADGE = createBadge("ice_badge", null);
+    public static final RegistrySupplier<Item> DARK_BADGE = createBadge("dark_badge", null);
+    public static final RegistrySupplier<Item> DRAGON_BADGE = createBadge("dragon_badge", null);
+    public static final RegistrySupplier<Item> SWORD_BADGE_COMPLETE = createBadge("sword_badge_complete", null);
+    public static final RegistrySupplier<Item> SHIELD_BADGE_COMPLETE = createBadge("shield_badge_complete", null);
+    public static final RegistrySupplier<Item> SPIKESHELL_BADGE = createBadge("spikeshell_badge", null);
+    public static final RegistrySupplier<Item> SEARUBY_BADGE = createBadge("searuby_badge", null);
+    public static final RegistrySupplier<Item> JADESTAR_BADGE = createBadge("jadestar_badge", null);
+    public static final RegistrySupplier<Item> CORALEYE_BADGE = createBadge("coraleye_badge", null);
+    public static final RegistrySupplier<Item> FREEDOM_BADGE = createBadge("freedom_badge", null);
+    public static final RegistrySupplier<Item> HARMONY_BADGE = createBadge("harmony_badge", null);
+    public static final RegistrySupplier<Item> PATIENCE_BADGE = createBadge("patience_badge", null);
+    public static final RegistrySupplier<Item> PRIDE_BADGE = createBadge("pride_badge", null);
+    public static final RegistrySupplier<Item> TRANQUILITY_BADGE = createBadge("tranquility_badge", null);
         //Ribbon
+    public static final RegistrySupplier<Item> PALDEA_CHAMPION_RIBBON = createRibbon("paldea_champion_ribbon");
+    public static final RegistrySupplier<Item> ABILITY_RIBBON = createRibbon("ability_ribbon");
+    public static final RegistrySupplier<Item> ALERT_RIBBON = createRibbon("alert_ribbon");
+    public static final RegistrySupplier<Item> ALOLA_CHAMPION_RIBBON = createRibbon("alola_champion_ribbon");
+    public static final RegistrySupplier<Item> ARTIST_RIBBON = createRibbon("artist_ribbon");
+    public static final RegistrySupplier<Item> BEAUTY_MASTER_RIBBON = createRibbon("beauty_master_ribbon");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_GREAT = createRibbon("beauty_ribbon_great");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_HOENN = createRibbon("beauty_ribbon_hoenn");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_HYPER = createRibbon("beauty_ribbon_hyper");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_MASTER_HOENN = createRibbon("beauty_ribbon_master_hoenn");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_MASTER_SINNOH = createRibbon("beauty_ribbon_master_sinnoh");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_SINNOH = createRibbon("beauty_ribbon_sinnoh");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_SUPER = createRibbon("beauty_ribbon_super");
+    public static final RegistrySupplier<Item> BEAUTY_RIBBON_ULTRA = createRibbon("beauty_ribbon_ultra");
+    public static final RegistrySupplier<Item> CARELESS_RIBBON = createRibbon("careless_ribbon");
+    public static final RegistrySupplier<Item> CHAMPION_RIBBON = createRibbon("champion_ribbon");
+    public static final RegistrySupplier<Item> CLEVERNESS_MASTER_RIBBON = createRibbon("cleverness_master_ribbon");
+    public static final RegistrySupplier<Item> CONTEST_STAR_RIBBON = createRibbon("contest_star_ribbon");
+    public static final RegistrySupplier<Item> COOL_RIBBON_GREAT = createRibbon("cool_ribbon_great");
+    public static final RegistrySupplier<Item> COOL_RIBBON_HOENN = createRibbon("cool_ribbon_hoenn");
+    public static final RegistrySupplier<Item> COOL_RIBBON_HYPER = createRibbon("cool_ribbon_hyper");
+    public static final RegistrySupplier<Item> COOL_RIBBON_MASTER_HOENN = createRibbon("cool_ribbon_master_hoenn");
+    public static final RegistrySupplier<Item> COOL_RIBBON_MASTER_SINNOH = createRibbon("cool_ribbon_master_sinnoh");
+    public static final RegistrySupplier<Item> COOL_RIBBON_SINNOH = createRibbon("cool_ribbon_sinnoh");
+    public static final RegistrySupplier<Item> COOL_RIBBON_SUPER = createRibbon("cool_ribbon_super");
+    public static final RegistrySupplier<Item> COOL_RIBBON_ULTRA = createRibbon("cool_ribbon_ultra");
+    public static final RegistrySupplier<Item> COOLNESS_MASTER_RIBBON = createRibbon("coolness_master_ribbon");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_GREAT = createRibbon("cute_ribbon_great");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_HOENN = createRibbon("cute_ribbon_hoenn");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_HYPER = createRibbon("cute_ribbon_hyper");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_MASTER_HOENN = createRibbon("cute_ribbon_master_hoenn");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_MASTER_SINNOH = createRibbon("cute_ribbon_master_sinnoh");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_SINNOH = createRibbon("cute_ribbon_sinnoh");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_SUPER = createRibbon("cute_ribbon_super");
+    public static final RegistrySupplier<Item> CUTE_RIBBON_ULTRA = createRibbon("cute_ribbon_ultra");
+    public static final RegistrySupplier<Item> CUTENESS_MASTER_RIBBON = createRibbon("cuteness_master_ribbon");
+    public static final RegistrySupplier<Item> DOUBLE_ABILITY_RIBBON = createRibbon("double_ability_ribbon");
+    public static final RegistrySupplier<Item> DOWNCAST_RIBBON = createRibbon("downcast_ribbon");
+    public static final RegistrySupplier<Item> EARTH_RIBBON = createRibbon("earth_ribbon");
+    public static final RegistrySupplier<Item> EFFORT_RIBBON = createRibbon("effort_ribbon");
+    public static final RegistrySupplier<Item> EXPERT_BATTLER_RIBBON = createRibbon("expert_battler_ribbon");
+    public static final RegistrySupplier<Item> BATTLE_TREE_GREAT_RIBBON = createRibbon("battle_tree_great_ribbon");
+    public static final RegistrySupplier<Item> BATTLE_TREE_MASTER_RIBBON = createRibbon("battle_tree_master_ribbon");
+    public static final RegistrySupplier<Item> TOWER_MASTER_RIBBON = createRibbon("tower_master_ribbon");
+    public static final RegistrySupplier<Item> FOOTPRINT_RIBBON = createRibbon("footprint_ribbon");
+    public static final RegistrySupplier<Item> RECORD_RIBBON = createRibbon("record_ribbon");
+    public static final RegistrySupplier<Item> BEST_FRIENDS_RIBBON = createRibbon("best_friends_ribbon");
+    public static final RegistrySupplier<Item> TRAINING_RIBBON = createRibbon("training_ribbon");
+    public static final RegistrySupplier<Item> BATTLE_ROYALE_MASTER_RIBBON = createRibbon("battle_royale_master_ribbon");
+    public static final RegistrySupplier<Item> MASTER_RANK_RIBBON = createRibbon("master_rank_ribbon");
+    public static final RegistrySupplier<Item> PIONEER_RIBBON = createRibbon("pioneer_ribbon");
+    public static final RegistrySupplier<Item> COUNTRY_RIBBON = createRibbon("country_ribbon");
+    public static final RegistrySupplier<Item> WORLD_RIBBON = createRibbon("world_ribbon");
+    public static final RegistrySupplier<Item> CLASSIC_RIBBON = createRibbon("classic_ribbon");
+    public static final RegistrySupplier<Item> PREMIER_RIBBON = createRibbon("premier_ribbon");
+    public static final RegistrySupplier<Item> EVENT_RIBBON = createRibbon("event_ribbon");
+    public static final RegistrySupplier<Item> BIRTHDAY_RIBBON = createRibbon("birthday_ribbon");
+    public static final RegistrySupplier<Item> SPECIAL_RIBBON = createRibbon("special_ribbon");
+    public static final RegistrySupplier<Item> SOUVENIR_RIBBON = createRibbon("souvenir_ribbon");
+    public static final RegistrySupplier<Item> WISHING_RIBBON = createRibbon("wishing_ribbon");
+    public static final RegistrySupplier<Item> BATTLE_CHAMPION_RIBBON = createRibbon("battle_champion_ribbon");
+    public static final RegistrySupplier<Item> REGIONAL_CHAMPION_RIBBON = createRibbon("regional_champion_ribbon");
+    public static final RegistrySupplier<Item> NATIONAL_CHAMPION_RIBBON = createRibbon("national_champion_ribbon");
+    public static final RegistrySupplier<Item> WORLD_CHAMPION_RIBBON = createRibbon("world_champion_ribbon");
+    public static final RegistrySupplier<Item> GORGEOUS_RIBBON = createRibbon("gorgeous_ribbon");
+    public static final RegistrySupplier<Item> GORGEOUS_ROYAL_RIBBON = createRibbon("gorgeous_royal_ribbon");
+    public static final RegistrySupplier<Item> GREAT_ABILITY_RIBBON = createRibbon("great_ability_ribbon");
+    public static final RegistrySupplier<Item> HOENN_CHAMPION_RIBBON = createRibbon("hoenn_champion_ribbon");
+    public static final RegistrySupplier<Item> KALOS_CHAMPION_RIBBON = createRibbon("kalos_champion_ribbon");
+    public static final RegistrySupplier<Item> LEGEND_RIBBON = createRibbon("legend_ribbon");
+    public static final RegistrySupplier<Item> MULTI_ABILITY_RIBBON = createRibbon("multi_ability_ribbon");
+    public static final RegistrySupplier<Item> NATIONAL_RIBBON = createRibbon("national_ribbon");
+    public static final RegistrySupplier<Item> PAIR_ABILITY_RIBBON = createRibbon("pair_ability_ribbon");
+    public static final RegistrySupplier<Item> RELAX_RIBBON = createRibbon("relax_ribbon");
+    public static final RegistrySupplier<Item> ROYAL_RIBBON = createRibbon("royal_ribbon");
+    public static final RegistrySupplier<Item> SHOCK_RIBBON = createRibbon("shock_ribbon");
+    public static final RegistrySupplier<Item> SINNOH_CHAMPION_RIBBON = createRibbon("sinnoh_champion_ribbon");
+    public static final RegistrySupplier<Item> SKILLFUL_BATTLER_RIBBON = createRibbon("skillful_battler_ribbon");
+    public static final RegistrySupplier<Item> SMART_RIBBON_GREAT = createRibbon("smart_ribbon_great");
+    public static final RegistrySupplier<Item> SMART_RIBBON_HOENN = createRibbon("smart_ribbon_hoenn");
+    public static final RegistrySupplier<Item> SMART_RIBBON_HYPER = createRibbon("smart_ribbon_hyper");
+    public static final RegistrySupplier<Item> SMART_RIBBON_MASTER_HOENN = createRibbon("smart_ribbon_master_hoenn");
+    public static final RegistrySupplier<Item> SMART_RIBBON_MASTER_SINNOH = createRibbon("smart_ribbon_master_sinnoh");
+    public static final RegistrySupplier<Item> SMART_RIBBON_SINNOH = createRibbon("smart_ribbon_sinnoh");
+    public static final RegistrySupplier<Item> SMART_RIBBON_SUPER = createRibbon("smart_ribbon_super");
+    public static final RegistrySupplier<Item> SMART_RIBBON_ULTRA = createRibbon("smart_ribbon_ultra");
+    public static final RegistrySupplier<Item> SMILE_RIBBON = createRibbon("smile_ribbon");
+    public static final RegistrySupplier<Item> SNOOZE_RIBBON = createRibbon("snooze_ribbon");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_GREAT = createRibbon("tough_ribbon_great");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_HOENN = createRibbon("tough_ribbon_hoenn");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_HYPER = createRibbon("tough_ribbon_hyper");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_MASTER_HOENN = createRibbon("tough_ribbon_master_hoenn");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_MASTER_SINNOH = createRibbon("tough_ribbon_master_sinnoh");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_SINNOH = createRibbon("tough_ribbon_sinnoh");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_SUPER = createRibbon("tough_ribbon_super");
+    public static final RegistrySupplier<Item> TOUGH_RIBBON_ULTRA = createRibbon("tough_ribbon_ultra");
+    public static final RegistrySupplier<Item> TOUGHNESS_MASTER_RIBBON = createRibbon("toughness_master_ribbon");
+    public static final RegistrySupplier<Item> VICTORY_RIBBON = createRibbon("victory_ribbon");
+    public static final RegistrySupplier<Item> WINNING_RIBBON = createRibbon("winning_ribbon");
+    public static final RegistrySupplier<Item> WORLD_ABILITY_RIBBON = createRibbon("world_ability_ribbon");
+    public static final RegistrySupplier<Item> ONCE_IN_A_LIFETIME_RIBBON = createRibbon("once_in_a_lifetime_ribbon");
+    public static final RegistrySupplier<Item> GALAR_CHAMP_RIBBON = createRibbon("galar_champ_ribbon");
+    public static final RegistrySupplier<Item> ABILITY_SYMBOL = createRibbon("ability_symbol");
+    public static final RegistrySupplier<Item> ABILITY_SYMBOL_SILVER = createRibbon("ability_symbol_silver");
+    public static final RegistrySupplier<Item> BRAVE_SYMBOL = createRibbon("brave_symbol");
+    public static final RegistrySupplier<Item> BRAVE_SYMBOL_SILVER = createRibbon("brave_symbol_silver");
+    public static final RegistrySupplier<Item> GUTS_SYMBOL = createRibbon("guts_symbol");
+    public static final RegistrySupplier<Item> GUTS_SYMBOL_SILVER = createRibbon("guts_symbol_silver");
+    public static final RegistrySupplier<Item> KNOWLEDGE_SYMBOL = createRibbon("knowledge_symbol");
+    public static final RegistrySupplier<Item> KNOWLEDGE_SYMBOL_SILVER = createRibbon("knowledge_symbol_silver");
+    public static final RegistrySupplier<Item> LUCK_SYMBOL = createRibbon("luck_symbol");
+    public static final RegistrySupplier<Item> LUCK_SYMBOL_SILVER = createRibbon("luck_symbol_silver");
+    public static final RegistrySupplier<Item> SPIRITS_SYMBOL = createRibbon("spirits_symbol");
+    public static final RegistrySupplier<Item> SPIRITS_SYMBOL_SILVER = createRibbon("spirits_symbol_silver");
+    public static final RegistrySupplier<Item> TACTICS_SYMBOL = createRibbon("tactics_symbol");
+    public static final RegistrySupplier<Item> TACTICS_SYMBOL_SILVER = createRibbon("tactics_symbol_silver");
 
     //Held Items
         //Held Item
+    public static final RegistrySupplier<Item> ABILITY_SHIELD = registerHeldItem("ability_shield");
+    public static final RegistrySupplier<Item> ABSORB_BULB = registerHeldItem("absorb_bulb");
+    public static final RegistrySupplier<Item> ADRENALINE_ORB = registerHeldItem("adrenaline_orb");
+    public static final RegistrySupplier<Item> AIR_BALLOON = registerHeldItem("air_balloon");
+    public static final RegistrySupplier<Item> AMULET_COIN = registerHeldItem("amulet_coin");
+    //public static final RegistrySupplier<Item> BERRY_JUICE = registerHeldItem("berry_juice");
+    public static final RegistrySupplier<Item> BINDING_BAND = registerHeldItem("binding_band");
+    public static final RegistrySupplier<Item> BLUNDER_POLICY = registerHeldItem("blunder_policy");
+    public static final RegistrySupplier<Item> BOOSTER_ENERGY = registerHeldItem("booster_energy");
+    //public static final RegistrySupplier<Item> BRIGHT_POWDER = registerHeldItem("bright_powder");
+    public static final RegistrySupplier<Item> CELL_BATTERY = registerHeldItem("cell_battery");
+    public static final RegistrySupplier<Item> CLEAR_AMULET = registerHeldItem("clear_amulet");
+    //public static final RegistrySupplier<Item> CHARCOAL = registerHeldItem("charcoal");
+    public static final RegistrySupplier<Item> COVERT_CLOAK = registerHeldItem("covert_cloak");
+    //public static final RegistrySupplier<Item> CHOICE_BAND = registerHeldItem("choice_band");
+    //public static final RegistrySupplier<Item> CLEANSE_TAG = registerHeldItem("cleanse_tag");
+    public static final RegistrySupplier<Item> DAMP_ROCK = registerHeldItem("damp_rock");
+    //public static final RegistrySupplier<Item> DESTINY_KNOT = registerHeldItem("destiny_knot");
+    public static final RegistrySupplier<Item> EJECT_BUTTON = registerHeldItem("eject_button");
+    public static final RegistrySupplier<Item> EJECT_PACK = registerHeldItem("eject_pack");
+    //public static final RegistrySupplier<Item> EVERSTONE = registerHeldItem("everstone");
+    public static final RegistrySupplier<Item> EVIOLITE = registerHeldItem("eviolite");
+    ////////////public static final RegistrySupplier<Item> EXP_ALL = registerHeldItem("exp_all");
+    public static final RegistrySupplier<Item> EXPERT_BELT = registerHeldItem("expert_belt");
+    //public static final RegistrySupplier<Item> FLAME_ORB = registerHeldItem("flame_orb");
+    public static final RegistrySupplier<Item> FLOAT_STONE = registerHeldItem("float_stone");
+    //public static final RegistrySupplier<Item> FOCUS_SASH = registerHeldItem("focus_sash");
+    public static final RegistrySupplier<Item> GRIP_CLAW = registerHeldItem("grip_claw");
+    public static final RegistrySupplier<Item> HEAT_ROCK = registerHeldItem("heat_rock");
+    public static final RegistrySupplier<Item> ICY_ROCK = registerHeldItem("icy_rock");
+    public static final RegistrySupplier<Item> IRON_BALL = registerHeldItem("iron_ball");
+    public static final RegistrySupplier<Item> LAGGING_TAIL = registerHeldItem("lagging_tail");
+    public static final RegistrySupplier<Item> LOADED_DICE = registerHeldItem("loaded_dice");
+    public static final RegistrySupplier<Item> LUMINOUS_MOSS = registerHeldItem("luminous_moss");
+    public static final RegistrySupplier<Item> MACHO_BRACE = registerHeldItem("macho_brace");
+    //public static final RegistrySupplier<Item> MENTAL_HERB = registerHeldItem("mental_herb");
+    //public static final RegistrySupplier<Item> METAL_POWDER = registerHeldItem("metal_powder");
+    public static final RegistrySupplier<Item> METRONOME = registerHeldItem("metronome");
+    //public static final RegistrySupplier<Item> POWER_ANKLET = registerHeldItem("power_anklet");
+    //public static final RegistrySupplier<Item> POWER_BAND = registerHeldItem("power_band");
+    //public static final RegistrySupplier<Item> POWER_BELT = registerHeldItem("power_belt");
+    //public static final RegistrySupplier<Item> POWER_BRACER = registerHeldItem("power_bracer");
+    //public static final RegistrySupplier<Item> POWER_HERB = registerHeldItem("power_herb");
+    //public static final RegistrySupplier<Item> POWER_LENS = registerHeldItem("power_lens");
+    //public static final RegistrySupplier<Item> POWER_WEIGHT = registerHeldItem("power_weight");
+    //public static final RegistrySupplier<Item> PRISM_SCALE = registerHeldItem("prism_scale");
+    public static final RegistrySupplier<Item> PROTECTIVE_PADS = registerHeldItem("protective_pads");
+    public static final RegistrySupplier<Item> PUNCHING_GLOVE = registerHeldItem("punching_glove");
+    //public static final RegistrySupplier<Item> QUICK_POWDER = registerHeldItem("quick_powder");
+    public static final RegistrySupplier<Item> RED_CARD = registerHeldItem("red_card");
+    public static final RegistrySupplier<Item> RING_TARGET = registerHeldItem("ring_target");
+    public static final RegistrySupplier<Item> ROOM_SERVICE = registerHeldItem("room_service");
+    public static final RegistrySupplier<Item> SCOPE_LENS = registerHeldItem("scope_lens");
+    public static final RegistrySupplier<Item> ELECTRIC_SEED = registerHeldItem("electric_seed");
+    public static final RegistrySupplier<Item> GRASSY_SEED = registerHeldItem("grassy_seed");
+    public static final RegistrySupplier<Item> MISTY_SEED = registerHeldItem("misty_seed");
+    public static final RegistrySupplier<Item> PSYCHIC_SEED = registerHeldItem("psychic_seed");
+    public static final RegistrySupplier<Item> SHED_SHELL = registerHeldItem("shed_shell");
+    public static final RegistrySupplier<Item> SHELL_BELL = registerHeldItem("shell_bell");
+    //public static final RegistrySupplier<Item> SMOKE_BALL = registerHeldItem("smoke_ball");
+    public static final RegistrySupplier<Item> SMOOTH_ROCK = registerHeldItem("smooth_rock");
+    public static final RegistrySupplier<Item> SNOWBALL = registerHeldItem("snowball");
+    public static final RegistrySupplier<Item> SOOTHE_BELL = registerHeldItem("soothe_bell");
+    public static final RegistrySupplier<Item> STICKY_BARB = registerHeldItem("sticky_barb");
+    public static final RegistrySupplier<Item> TERRAIN_EXTENDER = registerHeldItem("terrain_extender");
+    public static final RegistrySupplier<Item> THROAT_SPRAY = registerHeldItem("throat_spray");
+    //public static final RegistrySupplier<Item> TOXIC_ORB = registerHeldItem("toxic_orb");
+    //public static final RegistrySupplier<Item> UP_GRADE = registerHeldItem("up_grade");
+    public static final RegistrySupplier<Item> UTILITY_UMBRELLA = registerHeldItem("utility_umbrella");
+    public static final RegistrySupplier<Item> WEAKNESS_POLICY = registerHeldItem("weakness_policy");
+    //public static final RegistrySupplier<Item> WHITE_HERB = registerHeldItem("white_herb");
+    public static final RegistrySupplier<Item> WIDE_LENS = registerHeldItem("wide_lens");
+    public static final RegistrySupplier<Item> ZOOM_LENS = registerHeldItem("zoom_lens");
         //Special
-        //Incense
+    public static final RegistrySupplier<Item> LIGHT_BALL = registerHeldItem("light_ball");
+    public static final RegistrySupplier<Item> LEEK = registerHeldItem("leek");
+    public static final RegistrySupplier<Item> THICK_CLUB = registerHeldItem("thick_club");
+    public static final RegistrySupplier<Item> LUCKY_PUNCH = registerHeldItem("lucky_punch");
+
+    //Incense
+    public static final RegistrySupplier<Item> SEA_INCENSE = registerHeldItem("sea_incense");
+    public static final RegistrySupplier<Item> LAX_INCENSE = registerHeldItem("lax_incense");
+    public static final RegistrySupplier<Item> ROSE_INCENSE = registerHeldItem("rose_incense");
+    public static final RegistrySupplier<Item> PURE_INCENSE = registerHeldItem("pure_incense");
+    public static final RegistrySupplier<Item> ROCK_INCENSE = registerHeldItem("rock_incense");
+    public static final RegistrySupplier<Item> ODD_INCENSE = registerHeldItem("odd_incense");
+    public static final RegistrySupplier<Item> LUCK_INCENSE = registerHeldItem("luck_incense");
+    public static final RegistrySupplier<Item> FULL_INCENSE = registerHeldItem("full_incense");
+    public static final RegistrySupplier<Item> WAVE_INCENSE = registerHeldItem("wave_incense");
         //Gem
 
     //Consumables
@@ -131,6 +497,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ABILITY_PATCH = register("ability_patch", Item::new, GenerationsCreativeTabs.CONSUMABLES);
         //Other
     public static final RegistrySupplier<Item> POKE_DOLL = register("poke_doll", Item::new, GenerationsCreativeTabs.CONSUMABLES);
+    public static final RegistrySupplier<Item> POKE_TOY = register("poke_toy", Item::new, GenerationsCreativeTabs.CONSUMABLES);
     public static final RegistrySupplier<Item> FLUFFY_TAIL = register("fluffy_tail", Item::new, GenerationsCreativeTabs.CONSUMABLES);
 
     //Gimmick
@@ -151,52 +518,52 @@ public class GenerationsItems {
     /**
      * Restoration Items
      */
-    public static final RegistrySupplier<Item> POTION = register("potion", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> SUPER_POTION = register("super_potion", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> HYPER_POTION = register("hyper_potion", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> MAX_POTION = register("max_potion", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> REVIVE = register("revive", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> MAX_REVIVE = register("max_revive", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> PP_UP = register("pp_up", PpUpItem::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> PARALYZE_HEAL = register("paralyze_heal", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BURN_HEAL = register("burn_heal", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> ICE_HEAL = register("ice_heal", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> X_ATTACK = register("x_attack", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> X_DEFENSE = register("x_defense", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> X_SPECIAL_ATTACK = register("x_special_attack", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> X_SPECIAL_DEFENSE = register("x_special_defense", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> X_SPEED = register("x_speed", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> X_ACCURACY = register("x_accuracy", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, GenerationsCreativeTabs.RESTORATION);
+    public static final RegistrySupplier<Item> POTION = register("potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> SUPER_POTION = register("super_potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> HYPER_POTION = register("hyper_potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> MAX_POTION = register("max_potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> REVIVE = register("revive", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> MAX_REVIVE = register("max_revive", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> PP_UP = register("pp_up", PpUpItem::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> PARALYZE_HEAL = register("paralyze_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BURN_HEAL = register("burn_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ICE_HEAL = register("ice_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> X_ATTACK = register("x_attack", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> X_DEFENSE = register("x_defense", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> X_SPECIAL_ATTACK = register("x_special_attack", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> X_SPECIAL_DEFENSE = register("x_special_defense", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> X_SPEED = register("x_speed", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> X_ACCURACY = register("x_accuracy", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, GenerationsCreativeTabs.REMOVE);
 
-    public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> YELLOW_JUICE = register("yellow_juice", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BLUE_JUICE = register("blue_juice", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> GREEN_JUICE = register("green_juice", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> PINK_JUICE = register("pink_juice", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> COLORFUL_SHAKE = register("colorful_shake", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> PERILOUS_SOUP = register("perilous_soup", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> RARE_SODA = register("rare_soda", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> ULTRA_RARE_SODA = register("ultra_rare_soda", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> HEAL_POWDER = register("heal_powder", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BASIC_SWEET_POKE_PUFF = register("basic_sweet_poke_puff", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BASIC_CITRUS_POKE_PUFF = register("basic_citrus_poke_puff", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BASIC_MINT_POKE_PUFF = register("basic_mint_poke_puff", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BASIC_MOCHA_POKE_PUFF = register("basic_mocha_poke_puff", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BASIC_SPICE_POKE_PUFF = register("basic_spice_poke_puff", Item::new, GenerationsCreativeTabs.RESTORATION);
+    public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> YELLOW_JUICE = register("yellow_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BLUE_JUICE = register("blue_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> GREEN_JUICE = register("green_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> PINK_JUICE = register("pink_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> COLORFUL_SHAKE = register("colorful_shake", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> PERILOUS_SOUP = register("perilous_soup", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> RARE_SODA = register("rare_soda", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ULTRA_RARE_SODA = register("ultra_rare_soda", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> HEAL_POWDER = register("heal_powder", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BASIC_SWEET_POKE_PUFF = register("basic_sweet_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BASIC_CITRUS_POKE_PUFF = register("basic_citrus_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BASIC_MINT_POKE_PUFF = register("basic_mint_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BASIC_MOCHA_POKE_PUFF = register("basic_mocha_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BASIC_SPICE_POKE_PUFF = register("basic_spice_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
 
     /**
      * TM ITEMS
@@ -377,287 +744,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TM_171 = register("tm_171", properties -> new TechnicalMachineItem("terablast", properties), GenerationsCreativeTabs.PLAYER_ITEMS);
 
     /**
-     * Badges
-     */
-    public static final RegistrySupplier<Item> BALANCE_BADGE = createBadge("balance_badge", null);
-    public static final RegistrySupplier<Item> BEACON_BADGE = createBadge("beacon_badge", null);
-    public static final RegistrySupplier<Item> BOULDER_BADGE = createBadge("boulder_badge", null);
-    public static final RegistrySupplier<Item> CASCADE_BADGE = createBadge("cascade_badge", null);
-    public static final RegistrySupplier<Item> COAL_BADGE = createBadge("coal_badge", null);
-    public static final RegistrySupplier<Item> COBBLE_BADGE = createBadge("cobble_badge", null);
-    public static final RegistrySupplier<Item> DYNAMO_BADGE = createBadge("dynamo_badge", null);
-    public static final RegistrySupplier<Item> EARTH_BADGE = createBadge("earth_badge", null);
-    public static final RegistrySupplier<Item> FEATHER_BADGE = createBadge("feather_badge", null);
-    public static final RegistrySupplier<Item> FEN_BADGE = createBadge("fen_badge", null);
-    public static final RegistrySupplier<Item> FOG_BADGE = createBadge("fog_badge", null);
-    public static final RegistrySupplier<Item> FOREST_BADGE = createBadge("forest_badge", null);
-    public static final RegistrySupplier<Item> GLACIER_BADGE = createBadge("glacier_badge", null);
-    public static final RegistrySupplier<Item> HEAT_BADGE = createBadge("heat_badge", null);
-    public static final RegistrySupplier<Item> HIVE_BADGE = createBadge("hive_badge", null);
-    public static final RegistrySupplier<Item> ICICLE_BADGE = createBadge("icicle_badge", null);
-    public static final RegistrySupplier<Item> KNUCKLE_BADGE = createBadge("knuckle_badge", null);
-    public static final RegistrySupplier<Item> MARSH_BADGE = createBadge("marsh_badge", null);
-    public static final RegistrySupplier<Item> MIND_BADGE = createBadge("mind_badge", null);
-    public static final RegistrySupplier<Item> MINE_BADGE = createBadge("mine_badge", null);
-    public static final RegistrySupplier<Item> MINERAL_BADGE = createBadge("mineral_badge", null);
-    public static final RegistrySupplier<Item> PLAIN_BADGE = createBadge("plain_badge", null);
-    public static final RegistrySupplier<Item> RAINBOW_BADGE = createBadge("rainbow_badge", null);
-    public static final RegistrySupplier<Item> RAIN_BADGE = createBadge("rain_badge", null);
-    public static final RegistrySupplier<Item> RELIC_BADGE = createBadge("relic_badge", null);
-    public static final RegistrySupplier<Item> RISING_BADGE = createBadge("rising_badge", null);
-    public static final RegistrySupplier<Item> SOUL_BADGE = createBadge("soul_badge", null);
-    public static final RegistrySupplier<Item> STONE_BADGE = createBadge("stone_badge", null);
-    public static final RegistrySupplier<Item> STORM_BADGE = createBadge("storm_badge", null);
-    public static final RegistrySupplier<Item> THUNDER_BADGE = createBadge("thunder_badge", null);
-    public static final RegistrySupplier<Item> VOLCANO_BADGE = createBadge("volcano_badge", null);
-    public static final RegistrySupplier<Item> ZEPHYR_BADGE = createBadge("zephyr_badge", null);
-    public static final RegistrySupplier<Item> BASIC_BADGE = createBadge("basic_badge", null);
-    public static final RegistrySupplier<Item> BOLT_BADGE = createBadge("bolt_badge", null);
-    public static final RegistrySupplier<Item> FREEZE_BADGE = createBadge("freeze_badge", null);
-    public static final RegistrySupplier<Item> INSECT_BADGE = createBadge("insect_badge", null);
-    public static final RegistrySupplier<Item> JET_BADGE = createBadge("jet_badge", null);
-    public static final RegistrySupplier<Item> LEGEND_BADGE = createBadge("legend_badge", null);
-    public static final RegistrySupplier<Item> QUAKE_BADGE = createBadge("quake_badge", null);
-    public static final RegistrySupplier<Item> TOXIC_BADGE = createBadge("toxic_badge", null);
-    public static final RegistrySupplier<Item> TRIO_BADGE = createBadge("trio_badge", null);
-    public static final RegistrySupplier<Item> WAVE_BADGE = createBadge("wave_badge", null);
-    public static final RegistrySupplier<Item> BUG_BADGE = createBadge("bug_badge", null);
-    public static final RegistrySupplier<Item> CLIFF_BADGE = createBadge("cliff_badge", null);
-    public static final RegistrySupplier<Item> RUMBLE_BADGE = createBadge("rumble_badge", null);
-    public static final RegistrySupplier<Item> PLANT_BADGE = createBadge("plant_badge", null);
-    public static final RegistrySupplier<Item> VOLTAGE_BADGE = createBadge("voltage_badge", null);
-    public static final RegistrySupplier<Item> FAIRY_BADGE = createBadge("fairy_badge", null);
-    public static final RegistrySupplier<Item> PSYCHIC_BADGE = createBadge("psychic_badge", null);
-    public static final RegistrySupplier<Item> ICEBERG_BADGE = createBadge("iceberg_badge", null);
-    public static final RegistrySupplier<Item> SPIKESHELL_BADGE = createBadge("spikeshell_badge", null);
-    public static final RegistrySupplier<Item> SEARUBY_BADGE = createBadge("searuby_badge", null);
-    public static final RegistrySupplier<Item> JADESTAR_BADGE = createBadge("jadestar_badge", null);
-    public static final RegistrySupplier<Item> CORALEYE_BADGE = createBadge("coraleye_badge", null);
-    public static final RegistrySupplier<Item> FREEDOM_BADGE = createBadge("freedom_badge", null);
-    public static final RegistrySupplier<Item> HARMONY_BADGE = createBadge("harmony_badge", null);
-    public static final RegistrySupplier<Item> PATIENCE_BADGE = createBadge("patience_badge", null);
-    public static final RegistrySupplier<Item> PRIDE_BADGE = createBadge("pride_badge", null);
-    public static final RegistrySupplier<Item> TRANQUILITY_BADGE = createBadge("tranquility_badge", null);
-    public static final RegistrySupplier<Item> DARK_BADGE = createBadge("dark_badge", null);
-    public static final RegistrySupplier<Item> DRAGON_BADGE = createBadge("dragon_badge", null);
-    public static final RegistrySupplier<Item> FAIRY_BADGE_2 = createBadge("fairy_badge2", null);
-    public static final RegistrySupplier<Item> FIRE_BADGE = createBadge("fire_badge", null);
-    public static final RegistrySupplier<Item> GRASS_BADGE = createBadge("grass_badge", null);
-    public static final RegistrySupplier<Item> ICE_BADGE = createBadge("ice_badge", null);
-    public static final RegistrySupplier<Item> ROCK_BADGE = createBadge("rock_badge", null);
-    public static final RegistrySupplier<Item> WATER_BADGE = createBadge("water_badge", null);
-    public static final RegistrySupplier<Item> FIGHTING_BADGE = createBadge("fighting_badge", null);
-    public static final RegistrySupplier<Item> GHOST_BADGE = createBadge("ghost_badge", null);
-    public static final RegistrySupplier<Item> SHIELD_BADGE_COMPLETE = createBadge("shield_badge_complete", null);
-    public static final RegistrySupplier<Item> SWORD_BADGE_COMPLETE = createBadge("sword_badge_complete", null);
-
-    /**
-     * Ribbons
-     */
-    public static final RegistrySupplier<Item> PALDEA_CHAMPION_RIBBON = createRibbon("paldea_champion_ribbon");
-    public static final RegistrySupplier<Item> ABILITY_RIBBON = createRibbon("ability_ribbon");
-    public static final RegistrySupplier<Item> ALERT_RIBBON = createRibbon("alert_ribbon");
-    public static final RegistrySupplier<Item> ALOLA_CHAMPION_RIBBON = createRibbon("alola_champion_ribbon");
-    public static final RegistrySupplier<Item> ARTIST_RIBBON = createRibbon("artist_ribbon");
-    public static final RegistrySupplier<Item> BEAUTY_MASTER_RIBBON = createRibbon("beauty_master_ribbon");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_GREAT = createRibbon("beauty_ribbon_great");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_HOENN = createRibbon("beauty_ribbon_hoenn");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_HYPER = createRibbon("beauty_ribbon_hyper");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_MASTER_HOENN = createRibbon("beauty_ribbon_master_hoenn");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_MASTER_SINNOH = createRibbon("beauty_ribbon_master_sinnoh");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_SINNOH = createRibbon("beauty_ribbon_sinnoh");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_SUPER = createRibbon("beauty_ribbon_super");
-    public static final RegistrySupplier<Item> BEAUTY_RIBBON_ULTRA = createRibbon("beauty_ribbon_ultra");
-    public static final RegistrySupplier<Item> CARELESS_RIBBON = createRibbon("careless_ribbon");
-    public static final RegistrySupplier<Item> CHAMPION_RIBBON = createRibbon("champion_ribbon");
-    public static final RegistrySupplier<Item> CLEVERNESS_MASTER_RIBBON = createRibbon("cleverness_master_ribbon");
-    public static final RegistrySupplier<Item> CONTEST_STAR_RIBBON = createRibbon("contest_star_ribbon");
-    public static final RegistrySupplier<Item> COOL_RIBBON_GREAT = createRibbon("cool_ribbon_great");
-    public static final RegistrySupplier<Item> COOL_RIBBON_HOENN = createRibbon("cool_ribbon_hoenn");
-    public static final RegistrySupplier<Item> COOL_RIBBON_HYPER = createRibbon("cool_ribbon_hyper");
-    public static final RegistrySupplier<Item> COOL_RIBBON_MASTER_HOENN = createRibbon("cool_ribbon_master_hoenn");
-    public static final RegistrySupplier<Item> COOL_RIBBON_MASTER_SINNOH = createRibbon("cool_ribbon_master_sinnoh");
-    public static final RegistrySupplier<Item> COOL_RIBBON_SINNOH = createRibbon("cool_ribbon_sinnoh");
-    public static final RegistrySupplier<Item> COOL_RIBBON_SUPER = createRibbon("cool_ribbon_super");
-    public static final RegistrySupplier<Item> COOL_RIBBON_ULTRA = createRibbon("cool_ribbon_ultra");
-    public static final RegistrySupplier<Item> COOLNESS_MASTER_RIBBON = createRibbon("coolness_master_ribbon");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_GREAT = createRibbon("cute_ribbon_great");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_HOENN = createRibbon("cute_ribbon_hoenn");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_HYPER = createRibbon("cute_ribbon_hyper");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_MASTER_HOENN = createRibbon("cute_ribbon_master_hoenn");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_MASTER_SINNOH = createRibbon("cute_ribbon_master_sinnoh");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_SINNOH = createRibbon("cute_ribbon_sinnoh");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_SUPER = createRibbon("cute_ribbon_super");
-    public static final RegistrySupplier<Item> CUTE_RIBBON_ULTRA = createRibbon("cute_ribbon_ultra");
-    public static final RegistrySupplier<Item> CUTENESS_MASTER_RIBBON = createRibbon("cuteness_master_ribbon");
-    public static final RegistrySupplier<Item> DOUBLE_ABILITY_RIBBON = createRibbon("double_ability_ribbon");
-    public static final RegistrySupplier<Item> DOWNCAST_RIBBON = createRibbon("downcast_ribbon");
-    public static final RegistrySupplier<Item> EARTH_RIBBON = createRibbon("earth_ribbon");
-    public static final RegistrySupplier<Item> EFFORT_RIBBON = createRibbon("effort_ribbon");
-    public static final RegistrySupplier<Item> EXPERT_BATTLER_RIBBON = createRibbon("expert_battler_ribbon");
-    public static final RegistrySupplier<Item> BATTLE_TREE_GREAT_RIBBON = createRibbon("battle_tree_great_ribbon");
-    public static final RegistrySupplier<Item> BATTLE_TREE_MASTER_RIBBON = createRibbon("battle_tree_master_ribbon");
-    public static final RegistrySupplier<Item> TOWER_MASTER_RIBBON = createRibbon("tower_master_ribbon");
-    public static final RegistrySupplier<Item> FOOTPRINT_RIBBON = createRibbon("footprint_ribbon");
-    public static final RegistrySupplier<Item> RECORD_RIBBON = createRibbon("record_ribbon");
-    public static final RegistrySupplier<Item> BEST_FRIENDS_RIBBON = createRibbon("best_friends_ribbon");
-    public static final RegistrySupplier<Item> TRAINING_RIBBON = createRibbon("training_ribbon");
-    public static final RegistrySupplier<Item> BATTLE_ROYALE_MASTER_RIBBON = createRibbon("battle_royale_master_ribbon");
-    public static final RegistrySupplier<Item> MASTER_RANK_RIBBON = createRibbon("master_rank_ribbon");
-    public static final RegistrySupplier<Item> PIONEER_RIBBON = createRibbon("pioneer_ribbon");
-    public static final RegistrySupplier<Item> COUNTRY_RIBBON = createRibbon("country_ribbon");
-    public static final RegistrySupplier<Item> WORLD_RIBBON = createRibbon("world_ribbon");
-    public static final RegistrySupplier<Item> CLASSIC_RIBBON = createRibbon("classic_ribbon");
-    public static final RegistrySupplier<Item> PREMIER_RIBBON = createRibbon("premier_ribbon");
-    public static final RegistrySupplier<Item> EVENT_RIBBON = createRibbon("event_ribbon");
-    public static final RegistrySupplier<Item> BIRTHDAY_RIBBON = createRibbon("birthday_ribbon");
-    public static final RegistrySupplier<Item> SPECIAL_RIBBON = createRibbon("special_ribbon");
-    public static final RegistrySupplier<Item> SOUVENIR_RIBBON = createRibbon("souvenir_ribbon");
-    public static final RegistrySupplier<Item> WISHING_RIBBON = createRibbon("wishing_ribbon");
-    public static final RegistrySupplier<Item> BATTLE_CHAMPION_RIBBON = createRibbon("battle_champion_ribbon");
-    public static final RegistrySupplier<Item> REGIONAL_CHAMPION_RIBBON = createRibbon("regional_champion_ribbon");
-    public static final RegistrySupplier<Item> NATIONAL_CHAMPION_RIBBON = createRibbon("national_champion_ribbon");
-    public static final RegistrySupplier<Item> WORLD_CHAMPION_RIBBON = createRibbon("world_champion_ribbon");
-    public static final RegistrySupplier<Item> GORGEOUS_RIBBON = createRibbon("gorgeous_ribbon");
-    public static final RegistrySupplier<Item> GORGEOUS_ROYAL_RIBBON = createRibbon("gorgeous_royal_ribbon");
-    public static final RegistrySupplier<Item> GREAT_ABILITY_RIBBON = createRibbon("great_ability_ribbon");
-    public static final RegistrySupplier<Item> HOENN_CHAMPION_RIBBON = createRibbon("hoenn_champion_ribbon");
-    public static final RegistrySupplier<Item> KALOS_CHAMPION_RIBBON = createRibbon("kalos_champion_ribbon");
-    public static final RegistrySupplier<Item> LEGEND_RIBBON = createRibbon("legend_ribbon");
-    public static final RegistrySupplier<Item> MULTI_ABILITY_RIBBON = createRibbon("multi_ability_ribbon");
-    public static final RegistrySupplier<Item> NATIONAL_RIBBON = createRibbon("national_ribbon");
-    public static final RegistrySupplier<Item> PAIR_ABILITY_RIBBON = createRibbon("pair_ability_ribbon");
-    public static final RegistrySupplier<Item> RELAX_RIBBON = createRibbon("relax_ribbon");
-    public static final RegistrySupplier<Item> ROYAL_RIBBON = createRibbon("royal_ribbon");
-    public static final RegistrySupplier<Item> SHOCK_RIBBON = createRibbon("shock_ribbon");
-    public static final RegistrySupplier<Item> SINNOH_CHAMPION_RIBBON = createRibbon("sinnoh_champion_ribbon");
-    public static final RegistrySupplier<Item> SKILLFUL_BATTLER_RIBBON = createRibbon("skillful_battler_ribbon");
-    public static final RegistrySupplier<Item> SMART_RIBBON_GREAT = createRibbon("smart_ribbon_great");
-    public static final RegistrySupplier<Item> SMART_RIBBON_HOENN = createRibbon("smart_ribbon_hoenn");
-    public static final RegistrySupplier<Item> SMART_RIBBON_HYPER = createRibbon("smart_ribbon_hyper");
-    public static final RegistrySupplier<Item> SMART_RIBBON_MASTER_HOENN = createRibbon("smart_ribbon_master_hoenn");
-    public static final RegistrySupplier<Item> SMART_RIBBON_MASTER_SINNOH = createRibbon("smart_ribbon_master_sinnoh");
-    public static final RegistrySupplier<Item> SMART_RIBBON_SINNOH = createRibbon("smart_ribbon_sinnoh");
-    public static final RegistrySupplier<Item> SMART_RIBBON_SUPER = createRibbon("smart_ribbon_super");
-    public static final RegistrySupplier<Item> SMART_RIBBON_ULTRA = createRibbon("smart_ribbon_ultra");
-    public static final RegistrySupplier<Item> SMILE_RIBBON = createRibbon("smile_ribbon");
-    public static final RegistrySupplier<Item> SNOOZE_RIBBON = createRibbon("snooze_ribbon");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_GREAT = createRibbon("tough_ribbon_great");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_HOENN = createRibbon("tough_ribbon_hoenn");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_HYPER = createRibbon("tough_ribbon_hyper");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_MASTER_HOENN = createRibbon("tough_ribbon_master_hoenn");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_MASTER_SINNOH = createRibbon("tough_ribbon_master_sinnoh");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_SINNOH = createRibbon("tough_ribbon_sinnoh");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_SUPER = createRibbon("tough_ribbon_super");
-    public static final RegistrySupplier<Item> TOUGH_RIBBON_ULTRA = createRibbon("tough_ribbon_ultra");
-    public static final RegistrySupplier<Item> TOUGHNESS_MASTER_RIBBON = createRibbon("toughness_master_ribbon");
-    public static final RegistrySupplier<Item> VICTORY_RIBBON = createRibbon("victory_ribbon");
-    public static final RegistrySupplier<Item> WINNING_RIBBON = createRibbon("winning_ribbon");
-    public static final RegistrySupplier<Item> WORLD_ABILITY_RIBBON = createRibbon("world_ability_ribbon");
-    public static final RegistrySupplier<Item> ONCE_IN_A_LIFETIME_RIBBON = createRibbon("once_in_a_lifetime_ribbon");
-    public static final RegistrySupplier<Item> GALAR_CHAMP_RIBBON = createRibbon("galar_champ_ribbon");
-    public static final RegistrySupplier<Item> ABILITY_SYMBOL = createRibbon("ability_symbol");
-    public static final RegistrySupplier<Item> ABILITY_SYMBOL_SILVER = createRibbon("ability_symbol_silver");
-    public static final RegistrySupplier<Item> BRAVE_SYMBOL = createRibbon("brave_symbol");
-    public static final RegistrySupplier<Item> BRAVE_SYMBOL_SILVER = createRibbon("brave_symbol_silver");
-    public static final RegistrySupplier<Item> GUTS_SYMBOL = createRibbon("guts_symbol");
-    public static final RegistrySupplier<Item> GUTS_SYMBOL_SILVER = createRibbon("guts_symbol_silver");
-    public static final RegistrySupplier<Item> KNOWLEDGE_SYMBOL = createRibbon("knowledge_symbol");
-    public static final RegistrySupplier<Item> KNOWLEDGE_SYMBOL_SILVER = createRibbon("knowledge_symbol_silver");
-    public static final RegistrySupplier<Item> LUCK_SYMBOL = createRibbon("luck_symbol");
-    public static final RegistrySupplier<Item> LUCK_SYMBOL_SILVER = createRibbon("luck_symbol_silver");
-    public static final RegistrySupplier<Item> SPIRITS_SYMBOL = createRibbon("spirits_symbol");
-    public static final RegistrySupplier<Item> SPIRITS_SYMBOL_SILVER = createRibbon("spirits_symbol_silver");
-    public static final RegistrySupplier<Item> TACTICS_SYMBOL = createRibbon("tactics_symbol");
-    public static final RegistrySupplier<Item> TACTICS_SYMBOL_SILVER = createRibbon("tactics_symbol_silver");
-
-    /**
      * Held Items
      */
-    public static final RegistrySupplier<Item> ABSORB_BULB = registerHeldItem("absorb_bulb");
-    public static final RegistrySupplier<Item> ABILITY_SHIELD = registerHeldItem("ability_shield");
-    public static final RegistrySupplier<Item> ADRENALINE_ORB = registerHeldItem("adrenaline_orb");
-    public static final RegistrySupplier<Item> AIR_BALLOON = registerHeldItem("air_balloon");
-    public static final RegistrySupplier<Item> AMULET_COIN = registerHeldItem("amulet_coin");
-    public static final RegistrySupplier<Item> BERRY_JUICE = registerHeldItem("berry_juice");
-    public static final RegistrySupplier<Item> BINDING_BAND = registerHeldItem("binding_band");
-    public static final RegistrySupplier<Item> BLUNDER_POLICY = registerHeldItem("blunder_policy");
-    public static final RegistrySupplier<Item> BRIGHT_POWDER = registerHeldItem("bright_powder");
-    public static final RegistrySupplier<Item> CELL_BATTERY = registerHeldItem("cell_battery");
-    public static final RegistrySupplier<Item> CHARCOAL = registerHeldItem("charcoal");
-    public static final RegistrySupplier<Item> CHOICE_BAND = registerHeldItem("choice_band");
-    public static final RegistrySupplier<Item> CLEANSE_TAG = registerHeldItem("cleanse_tag");
-    public static final RegistrySupplier<Item> DAMP_ROCK = registerHeldItem("damp_rock");
-    public static final RegistrySupplier<Item> DESTINY_KNOT = registerHeldItem("destiny_knot");
-    public static final RegistrySupplier<Item> EJECT_BUTTON = registerHeldItem("eject_button");
-    public static final RegistrySupplier<Item> EJECT_PACK = registerHeldItem("eject_pack");
-    public static final RegistrySupplier<Item> EVERSTONE = registerHeldItem("everstone");
-    public static final RegistrySupplier<Item> EVIOLITE = registerHeldItem("eviolite");
-    public static final RegistrySupplier<Item> EXP_ALL = registerHeldItem("exp_all");
-    public static final RegistrySupplier<Item> EXPERT_BELT = registerHeldItem("expert_belt");
-    public static final RegistrySupplier<Item> FLAME_ORB = registerHeldItem("flame_orb");
-    public static final RegistrySupplier<Item> FLOAT_STONE = registerHeldItem("float_stone");
-    public static final RegistrySupplier<Item> FOCUS_SASH = registerHeldItem("focus_sash");
-    public static final RegistrySupplier<Item> GRIP_CLAW = registerHeldItem("grip_claw");
-    public static final RegistrySupplier<Item> HEAT_ROCK = registerHeldItem("heat_rock");
-    public static final RegistrySupplier<Item> ICY_ROCK = registerHeldItem("icy_rock");
-    public static final RegistrySupplier<Item> IRON_BALL = registerHeldItem("iron_ball");
-    public static final RegistrySupplier<Item> LAGGING_TAIL = registerHeldItem("lagging_tail");
-    public static final RegistrySupplier<Item> LEEK = registerHeldItem("leek");
-    public static final RegistrySupplier<Item> LIFE_ORB = register("life_orb", properties -> new BattleItem(properties) {
-//        @Override
-//        public void onTurnFinish(Battle battle, Turn turn) {
-//
-//        }
-//
-//        @Override
-//        public void onUserAction(Battle battle, Turn turn, BattleAction action) {
-//            // FIXME: check if move used. if move used to on turn finished.
-//            throw new RuntimeException("e");
-////            if (action instanceof MoveAction)
-////                turn.pushChange(null, new HpStateChange(action.sender, action.sender.getParty().fieldPixelmon.getMaxHp() / 10));
-//        }
-    }, GenerationsCreativeTabs.HELD_ITEMS);
-    public static final RegistrySupplier<Item> LIGHT_BALL = registerHeldItem("light_ball");
-    public static final RegistrySupplier<Item> LUCKY_PUNCH = registerHeldItem("lucky_punch");
-    public static final RegistrySupplier<Item> LUMINOUS_MOSS = registerHeldItem("luminous_moss");
-    public static final RegistrySupplier<Item> MACHO_BRACE = registerHeldItem("macho_brace");
-    public static final RegistrySupplier<Item> MENTAL_HERB = registerHeldItem("mental_herb");
-    public static final RegistrySupplier<Item> METAL_POWDER = registerHeldItem("metal_powder");
-    public static final RegistrySupplier<Item> METRONOME = registerHeldItem("metronome");
-    public static final RegistrySupplier<Item> POKE_TOY = registerHeldItem("poke_toy");
-    public static final RegistrySupplier<Item> POWER_ANKLET = registerHeldItem("power_anklet");
-    public static final RegistrySupplier<Item> POWER_BAND = registerHeldItem("power_band");
-    public static final RegistrySupplier<Item> POWER_BELT = registerHeldItem("power_belt");
-    public static final RegistrySupplier<Item> POWER_BRACER = registerHeldItem("power_bracer");
-    public static final RegistrySupplier<Item> POWER_HERB = registerHeldItem("power_herb");
-    public static final RegistrySupplier<Item> POWER_LENS = registerHeldItem("power_lens");
-    public static final RegistrySupplier<Item> POWER_WEIGHT = registerHeldItem("power_weight");
-    public static final RegistrySupplier<Item> PRISM_SCALE = registerHeldItem("prism_scale");
-    public static final RegistrySupplier<Item> PROTECTIVE_PADS = registerHeldItem("protective_pads");
-    public static final RegistrySupplier<Item> QUICK_POWDER = registerHeldItem("quick_powder");
-    public static final RegistrySupplier<Item> RED_CARD = registerHeldItem("red_card");
-    public static final RegistrySupplier<Item> RING_TARGET = registerHeldItem("ring_target");
-    public static final RegistrySupplier<Item> ROOM_SERVICE = registerHeldItem("room_service");
-    public static final RegistrySupplier<Item> SCOPE_LENS = registerHeldItem("scope_lens");
-    public static final RegistrySupplier<Item> SHED_SHELL = registerHeldItem("shed_shell");
-    public static final RegistrySupplier<Item> SHELL_BELL = registerHeldItem("shell_bell");
-    public static final RegistrySupplier<Item> SMOKE_BALL = registerHeldItem("smoke_ball");
-    public static final RegistrySupplier<Item> SMOOTH_ROCK = registerHeldItem("smooth_rock");
-    public static final RegistrySupplier<Item> SNOWBALL = registerHeldItem("snowball");
-    public static final RegistrySupplier<Item> SOOTHE_BELL = registerHeldItem("soothe_bell");
-    public static final RegistrySupplier<Item> SOUL_DEW = registerHeldItem("soul_dew");
-    public static final RegistrySupplier<Item> STICKY_BARB = registerHeldItem("sticky_barb");
-    public static final RegistrySupplier<Item> TERRAIN_EXTENDER = registerHeldItem("terrain_extender");
-    public static final RegistrySupplier<Item> THICK_CLUB = registerHeldItem("thick_club");
-    public static final RegistrySupplier<Item> THROAT_SPRAY = registerHeldItem("throat_spray");
-    public static final RegistrySupplier<Item> TOXIC_ORB = registerHeldItem("toxic_orb");
-    public static final RegistrySupplier<Item> UP_GRADE = registerHeldItem("up_grade");
-    public static final RegistrySupplier<Item> UTILITY_UMBRELLA = registerHeldItem("utility_umbrella");
-    public static final RegistrySupplier<Item> WEAKNESS_POLICY = registerHeldItem("weakness_policy");
-    public static final RegistrySupplier<Item> WHITE_HERB = registerHeldItem("white_herb");
-    public static final RegistrySupplier<Item> WIDE_LENS = registerHeldItem("wide_lens");
-    public static final RegistrySupplier<Item> ZOOM_LENS = registerHeldItem("zoom_lens");
+
     public static final RegistrySupplier<Item> BURN_DRIVE = registerHeldItem("burn_drive");
     public static final RegistrySupplier<Item> CHILL_DRIVE = registerHeldItem("chill_drive");
     public static final RegistrySupplier<Item> DOUSE_DRIVE = registerHeldItem("douse_drive");
@@ -681,16 +770,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ROCK_GEM = registerHeldItem("rock_gem");
     public static final RegistrySupplier<Item> STEEL_GEM = registerHeldItem("steel_gem");
     public static final RegistrySupplier<Item> WATER_GEM = registerHeldItem("water_gem");
-
-    public static final RegistrySupplier<Item> FULL_INCENSE = registerHeldItem("full_incense");
-    public static final RegistrySupplier<Item> LAX_INCENSE = registerHeldItem("lax_incense");
-    public static final RegistrySupplier<Item> LUCK_INCENSE = registerHeldItem("luck_incense");
-    public static final RegistrySupplier<Item> ODD_INCENSE = registerHeldItem("odd_incense");
-    public static final RegistrySupplier<Item> PURE_INCENSE = registerHeldItem("pure_incense");
-    public static final RegistrySupplier<Item> ROCK_INCENSE = registerHeldItem("rock_incense");
-    public static final RegistrySupplier<Item> ROSE_INCENSE = registerHeldItem("rose_incense");
-    public static final RegistrySupplier<Item> SEA_INCENSE = registerHeldItem("sea_incense");
-    public static final RegistrySupplier<Item> WAVE_INCENSE = registerHeldItem("wave_incense");
 
     public static final RegistrySupplier<Item> ABOMASITE = registerHeldItem("abomasite");
     public static final RegistrySupplier<Item> ABSOLITE = registerHeldItem("absolite");
@@ -813,40 +892,16 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TAPUNIUM_Z = registerHeldItem("tapunium_z");
     public static final RegistrySupplier<Item> ULTRANECROZIUM_Z = registerHeldItem("ultranecrozium_z");
 
-    public static final RegistrySupplier<Item> ELECTRIC_SEED = registerHeldItem("electric_seed");
-    public static final RegistrySupplier<Item> MISTY_SEED = registerHeldItem("misty_seed");
-    public static final RegistrySupplier<Item> GRASSY_SEED = registerHeldItem("grassy_seed");
-    public static final RegistrySupplier<Item> PSYCHIC_SEED = registerHeldItem("psychic_seed");
     public static final RegistrySupplier<Item> RED_SCARF = registerHeldItem("red_scarf");
     public static final RegistrySupplier<Item> LEGEND_PLATE = registerHeldItem("legend_plate");
     public static final RegistrySupplier<Item> LUSTROUS_GLOBE = registerHeldItem("lustrous_globe");
     public static final RegistrySupplier<Item> ADAMANT_CRYSTAL = registerHeldItem("adamant_crystal");
     public static final RegistrySupplier<Item> GRISEOUS_CORE = registerHeldItem("griseous_core");
-    public static final RegistrySupplier<Item> LOADED_DICE = registerHeldItem("loaded_dice");
-    public static final RegistrySupplier<Item> PUNCHING_GLOVE = registerHeldItem("punching_glove");
-    public static final RegistrySupplier<Item> CLEAR_AMULET = registerHeldItem("clear_amulet");
-    public static final RegistrySupplier<Item> COVERT_CLOAK = registerHeldItem("covert_cloak");
-    public static final RegistrySupplier<Item> BOOSTER_ENERGY = registerHeldItem("booster_energy");
-    public static final RegistrySupplier<Item> FAIRY_FEATHER = registerHeldItem("fairy_feather");
-
-    /**
-     * Vanilla Like Materials
-     */
-    public static final RegistrySupplier<Item> Z_INGOT = register("z_ingot", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> COPPER_PLATE = register("copper_plate", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    //public static final RegistrySupplier<Item> FAIRY_FEATHER = registerHeldItem("fairy_feather");
 
     /**
      * Player Items
      */
-    public static final RegistrySupplier<Item> MARK_CHARM = register("mark_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> CATCHING_CHARM = register("catching_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> EXP_CHARM = register("exp_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> CAMERA = register("camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> SNAP_CAMERA = register("snap_camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> FILM = register("film", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> REPEL = register("repel", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> SUPER_REPEL = register("super_repel", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> MAX_REPEL = register("max_repel", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     /*
     public static final RegistrySupplier<Item> RED_BIKE = register("red_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ORANGE_BIKE = register("orange_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
@@ -855,16 +910,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BLUE_BIKE = register("blue_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> PURPLE_BIKE = register("purple_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     */
-    public static final RegistrySupplier<Item> ROTOM_CATALOG = register("rotom_catalog", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> POKEDEX = register("pokedex", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> LURE_MODULE = register("lure_module", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> UNCHARGED_DYNAMAX_BAND = register("uncharged_dynamax_band", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.PLAYER_ITEMS);
 
     /**
      * Legendary Items
      */
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ORB = register("orb", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<CreationTrioItem> ADAMANT_ORB = register("adamant_orb", properties -> new CreationTrioItem(properties.stacksTo(1), LegendKeys.DIALGA, GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<CreationTrioItem> GRISEOUS_ORB = register("griseous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), LegendKeys.GIRATINA, GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<CreationTrioItem> LUSTROUS_ORB = register("lustrous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), LegendKeys.PALKIA, GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -903,7 +952,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> REINS_OF_UNITY = register("reins_of_unity", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> N_SOLARIZER = register("n_solarizer", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> N_LUNARIZER = register("n_lunarizer", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> LEGEND_FINDER = register("legend_finder", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> HOOPA_RING = register("hoopa_ring", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> RED_ORB = register("red_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ElementalPostBattleUpdateItemImpl> FADED_RED_ORB = register("faded_red_orb", properties -> new ElementalPostBattleUpdateItemImpl(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFIRE()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -915,26 +963,15 @@ public class GenerationsItems {
     public static final RegistrySupplier<TaoTrioStoneItem> DARK_STONE = register("dark_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), LegendKeys.ZEKROM), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<TaoTrioStoneItem> DRAGON_STONE = register("dragon_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), LegendKeys.KYUREM), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<WingItem> RAINBOW_WING = register("rainbow_wing", properties -> new WingItem(properties, "rainbow", ElementalTypes.INSTANCE.getFLYING(), LegendKeys.HO_OH), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> DARK_SOUL = register("dark_soul", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> DRAGON_SOUL = register("dragon_soul", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MELODY_FLUTE = register("melody_flute", MelodyFluteItem::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> SPARKLING_SHARD = register("sparkling_shard", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SPARKLING_STONE = register("sparkling_stone", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> RUSTY_FRAGMENT = register("rusty_fragment", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ElementalPostBattleUpdateItemImplImpl> RUSTY_SWORD = register("rusty_sword", properties -> new ElementalPostBattleUpdateItemImplImpl(properties.stacksTo(1).durability(100), LegendKeys.ZAMAZENTA, ElementalTypes.INSTANCE.getSTEEL()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> CROWNED_SWORD = register("crowned_sword", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ElementalPostBattleUpdateItemImplImpl> RUSTY_SHIELD = register("rusty_shield", properties -> new ElementalPostBattleUpdateItemImplImpl(properties.stacksTo(1).durability(100), LegendKeys.ZACIAN, ElementalTypes.INSTANCE.getSTEEL()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> CROWNED_SHIELD = register("crowned_shield", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SCROLL_PAGE = register("scroll_page", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<PostBattleUpdatingWithItem> SECRET_ARMOR_SCROLL = register("secret_armor_scroll", properties -> new PostBattleUpdatingWithItem(properties.stacksTo(1).durability(100), "kubfu", "pixelmon.secret_armor_scoll.amountfull", (player, stack, battle) -> battle.isNpc()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ZYGARDE_CUBE = register("zygarde_cube", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<MeltanBox> MELTAN_BOX = register("meltan_box", properties -> new MeltanBox(properties.stacksTo(1).durability(200)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> MELTAN_BOX_CHARGED = register("meltan_box_charged", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)) {
-        @Override
-        public boolean isFoil(@NotNull ItemStack stack) {
-            return true;
-        }
-    }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+
     public static final RegistrySupplier<TimeGlassItem> TIME_GLASS = register("time_glass", properties -> new TimeGlassItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MOON_FLUTE = register("moon_flute", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SUN_FLUTE = register("sun_flute", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -947,12 +984,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ICEROOT_CARROT = register("iceroot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("glastrier"), UNENCHANTED_ICEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHADEROOT_CARROT = register("shaderoot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("spectrier"), UNENCHANTED_SHADEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<EnigmaStoneItem> ENIGMA_STONE = register("enigma_stone", properties -> new EnigmaStoneItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_SHARD = register("enigma_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_FRAGMENT = register("enigma_fragment", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4).fireResistant() /* just incase it falls into lava while in nether*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_WILLPOWER = register("shard_of_willpower", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_EMOTION = register("shard_of_emotion", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_KNOWLEDGE = register("shard_of_knowledge", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<LakeCrystalItem> CRYSTAL_OF_WILLPOWER = register("crystal_of_willpower", properties -> new LakeCrystalItem(properties.durability(100), LegendKeys.AZELF), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<LakeCrystalItem> CRYSTAL_OF_EMOTION = register("crystal_of_emotion", properties -> new LakeCrystalItem(properties.durability(100), LegendKeys.MESPRIT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<LakeCrystalItem> CRYSTAL_OF_KNOWLEDGE = register("crystal_of_knowledge", properties -> new LakeCrystalItem(properties.durability(100), LegendKeys.UXIE), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -970,29 +1001,15 @@ public class GenerationsItems {
     public static final RegistrySupplier<WingItem> SINISTER_WING = register("sinister_wing", properties -> new WingItem(properties.stacksTo(1), "sinister", ElementalTypes.INSTANCE.getDARK(), LegendKeys.GALARIAN_MOLTRES), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MEW_DNA_FIBER = register("mew_dna_fiber", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MEW_FOSSIL = register("mew_fossil", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> LIGHT_SOUL = register("light_soul", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<LegendaryEggItem> WONDER_EGG = register("wonder_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.MANAPHY, 10000), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<LegendaryEggItem> PHIONE_EGG = register("phione_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.PHIONE, 10000), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<SingleElmentPostUpdatingItem> SOUL_HEART = register("soul_heart", properties -> new SingleElmentPostUpdatingItem(properties.stacksTo(1).durability(100), ElementalTypes.INSTANCE.getFAIRY()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-
-    /**
-     * Naturals
-     */
-    public static final RegistrySupplier<Item> CRYSTAL = register("crystal", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RUBY = register("ruby", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SILICON = register("silicon", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<EnigmaStoneItem> ENIGMA_STONE = register("enigma_stone", properties -> new EnigmaStoneItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> SOUL_DEW = registerHeldItem("soul_dew");
 
     /**
      * Utility Items
      */
-    public static final RegistrySupplier<Item> POKEMON_WAND = register("pokemon_wand", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueEditorItem::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> GIFT_BOX = register("gift_box", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> NPC_WAND = register("npc_wand", NpcWandItem::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", NpcPathTool::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> ZONE_WAND = register("zone_wand", Item::new, GenerationsCreativeTabs.UTILITY);
     //public static final RegistrySupplier<Item> BIKE_FRAME = register("bike_frame", Item::new, GenerationsCreativeTabs.UTILITY);
     //public static final RegistrySupplier<Item> BIKE_HANDLEBARS = register("bike_handlebars", Item::new, GenerationsCreativeTabs.UTILITY);
     //public static final RegistrySupplier<Item> BIKE_SEAT = register("bike_seat", Item::new, GenerationsCreativeTabs.UTILITY);
@@ -1188,31 +1205,31 @@ public class GenerationsItems {
     /**
      * Player Consumables
      */
-    public static final RegistrySupplier<Item> KOMALA_COFFEE = register("komala_coffee", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> OMELETTE = register("omelette", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> PINAP_JUICE = register("pinap_juice", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> ROSERADE_TEA = register("roserade_tea", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> TAPU_COCOA = register("tapu_cocoa", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> KOMALA_COFFEE = register("komala_coffee", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> OMELETTE = register("omelette", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> PINAP_JUICE = register("pinap_juice", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ROSERADE_TEA = register("roserade_tea", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> TAPU_COCOA = register("tapu_cocoa", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.REMOVE);
 
     /**
      * Fossils
      */
-    public static final RegistrySupplier<Item> ARMOR_FOSSIL = register("armor_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> BIRD_FOSSIL = register("bird_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> CLAW_FOSSIL = register("claw_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> COVER_FOSSIL = register("cover_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> DINO_FOSSIL = register("dino_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> DOME_FOSSIL = register("dome_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> DRAKE_FOSSIL = register("drake_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> FISH_FOSSIL = register("fish_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> FOSSIL = register("fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> HELIX_FOSSIL = register("helix_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> JAW_FOSSIL = register("jaw_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> OLD_AMBER = register("old_amber", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> PLUME_FOSSIL = register("plume_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> ROOT_FOSSIL = register("root_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> SAIL_FOSSIL = register("sail_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
-    public static final RegistrySupplier<Item> SKULL_FOSSIL = register("skull_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> ARMOR_FOSSIL = register("armor_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> BIRD_FOSSIL = register("bird_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> CLAW_FOSSIL = register("claw_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> COVER_FOSSIL = register("cover_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> DINO_FOSSIL = register("dino_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> DOME_FOSSIL = register("dome_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> DRAKE_FOSSIL = register("drake_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> FISH_FOSSIL = register("fish_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> FOSSIL = register("fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> HELIX_FOSSIL = register("helix_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> JAW_FOSSIL = register("jaw_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> OLD_AMBER = register("old_amber", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> PLUME_FOSSIL = register("plume_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> ROOT_FOSSIL = register("root_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> SAIL_FOSSIL = register("sail_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
+    public static final RegistrySupplier<Item> SKULL_FOSSIL = register("skull_fossil", Item::new, GenerationsCreativeTabs.REMOVE);
 
     /**
      * Un-Implemented Items : Items currently have no in-game function
@@ -1332,7 +1349,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MEDAL_BOX = register("medal_box", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGA_CHARM = register("mega_charm", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGA_CUFF = register("mega_cuff", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> MEGA_RING = register("mega_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEMBER_CARD = register("member_card", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGASTONE_SHARD = register("mega_stone_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1474,7 +1490,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> YELLOW_PETAL = register("yellow_petal", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> YELLOW_SCARF = register("yellow_scarf", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> Z_POWER_RING = register("z_power_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> Z_RING = register("z_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> BLUE_FLUTE = register("blue_flute", Item::new, GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> RED_FLUTE = register("red_flute", Item::new, GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> YELLOW_FLUTE = register("yellow_flute", Item::new, GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1487,57 +1502,12 @@ public class GenerationsItems {
 
     public static final RegistrySupplier<Item> CURRY = register("curry", ItemCurry::new, GenerationsCreativeTabs.CUISINE);
 
-    public static final RegistrySupplier<Item> ULTRA_DARK_SIGN = registerSign("ultra_dark_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_SIGN = registerSign("ghost_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign", properties -> new HangingSignItem(GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
-
-    public static final RegistrySupplier<Item> GHOST_BOAT_ITEM = register("ghost_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_DARK_BOAT_ITEM = register("ultra_dark_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_DARK_CHEST_BOAT_ITEM = register("ultra_dark_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_BOAT_ITEM = register("ultra_jungle_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
-
-    public static final RegistrySupplier<Item> POKE_WALKMON = register("poke_walkmon", properties -> new WalkmonItem(properties, 1, "poke_walkmon"), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", GenerationsSounds.AZALEA_TOWN, 4000);
-    public static final RegistrySupplier<Item> CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", GenerationsSounds.CASCARRAFA_CITY, 3396);
-    public static final RegistrySupplier<Item> CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", GenerationsSounds.CERULEAN_CITY, 3677);
-    public static final RegistrySupplier<Item> ETERNA_CITY_DISC = createMusicDisc("eterna_city_disc", GenerationsSounds.ETERNA_CITY, 2720);
-    public static final RegistrySupplier<Item> GOLDENROD_CITY_DISC = createMusicDisc("goldenrod_city_disc", GenerationsSounds.GOLDENROD_CITY, 3642);
-    public static final RegistrySupplier<Item> ICIRRUS_CITY_DISC = createMusicDisc("icirrus_city_disc", GenerationsSounds.ICIRRUS_CITY, 2958);
-    public static final RegistrySupplier<Item> JUBILIFE_VILLAGE_DISC = createMusicDisc("jubilife_village_disc", GenerationsSounds.JUBILIFE_VILLAGE, 4048);
-    public static final RegistrySupplier<Item> LAKE_OF_RAGE_DISC = createMusicDisc("lake_of_rage_disc", GenerationsSounds.LAKE_OF_RAGE, 2773);
-    public static final RegistrySupplier<Item> LAVERRE_CITY_DISC = createMusicDisc("laverre_city_disc", GenerationsSounds.LAVERRE_CITY, 5626);
-    public static final RegistrySupplier<Item> LILLIE_DISC = createMusicDisc("lillie_disc", GenerationsSounds.LILLIE, 6241);
-    public static final RegistrySupplier<Item> POKEMON_CENTER_DISC = createMusicDisc("pokemon_center_disc", GenerationsSounds.POKEMON_CENTER, 4806);
-    public static final RegistrySupplier<Item> ROUTE_228_DISC = createMusicDisc("route_228_disc", GenerationsSounds.ROUTE_228, 8374);
-    public static final RegistrySupplier<Item> SLUMBERING_WEALD_DISC = createMusicDisc("slumbering_weald_disc", GenerationsSounds.SLUMBERING_WEALD, 5242);
-    public static final RegistrySupplier<Item> SURF_DISC = createMusicDisc("surf_disc", GenerationsSounds.SURF, 5230);
-    public static final RegistrySupplier<Item> VERMILION_CITY_DISC = createMusicDisc("vermilion_city_disc", GenerationsSounds.VERMILION_CITY, 4320);
-    public static final RegistrySupplier<Item> CYNTHIA_DISC = createMusicDisc("cynthia_disc", GenerationsSounds.CYNTHIA, 7705);
-    public static final RegistrySupplier<Item> DEOXYS_DISC = createMusicDisc("deoxys_disc", GenerationsSounds.DEOXYS, 8290);
-    public static final RegistrySupplier<Item> IRIS_DISC = createMusicDisc("iris_disc", GenerationsSounds.IRIS, 5824);
-    public static final RegistrySupplier<Item> KANTO_DISC = createMusicDisc("kanto_disc", GenerationsSounds.KANTO, 6748);
-    public static final RegistrySupplier<Item> LUSAMINE_DISC = createMusicDisc("lusamine_disc", GenerationsSounds.LUSAMINE, 6756);
-    public static final RegistrySupplier<Item> NEMONA_DISC = createMusicDisc("nemona_disc", GenerationsSounds.NEMONA, 3169);
-    public static final RegistrySupplier<Item> NESSA_DISC = createMusicDisc("nessa_disc", GenerationsSounds.NESSA, 5276);
-    public static final RegistrySupplier<Item> PENNY_DISC = createMusicDisc("penny_disc", GenerationsSounds.PENNY, 5342);
-    public static final RegistrySupplier<Item> RIVAL_DISC = createMusicDisc("rival_disc", GenerationsSounds.RIVAL, 4426);
-    public static final RegistrySupplier<Item> SADA_AND_TURO_DISC = createMusicDisc("sada_and_turo_disc", GenerationsSounds.SADA_AND_TURO, 6974);
-    public static final RegistrySupplier<Item> SOUTH_PROVINCE_DISC = createMusicDisc("south_province_disc", GenerationsSounds.SOUTH_PROVINCE, 4285);
-    public static final RegistrySupplier<Item> TEAM_ROCKET_DISC = createMusicDisc("team_rocket_disc", GenerationsSounds.TEAM_ROCKET, 3729);
-    public static final RegistrySupplier<Item> ULTRA_NECROZMA_DISC = createMusicDisc("ultra_necrozma_disc", GenerationsSounds.ULTRA_NECROZMA, 5925);
-    public static final RegistrySupplier<Item> XY_LEGENDARY_DISC = createMusicDisc("xy_legendary_disc", GenerationsSounds.XY_LEGENDARY, 5216);
-    public static final RegistrySupplier<Item> ZINNIA_DISC = createMusicDisc("zinnia_disc", GenerationsSounds.ZINNIA, 6409);
-    public static final RegistrySupplier<Item> LAVENDER_TOWN_DISC = createMusicDisc("lavender_town_disc", GenerationsSounds.LAVENDER_TOWN, 7376);
-    public static final RegistrySupplier<Item> LUGIA_DISC = createMusicDisc("lugia_disc", GenerationsSounds.LUGIA, 6825);
-    public static final RegistrySupplier<Item> MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", GenerationsSounds.MT_PYRE, 4372);
+    public static final RegistrySupplier<Item> GHOST_SIGN = registerSign("ghost_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get()), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign", properties -> new HangingSignItem(GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_DARK_SIGN = registerSign("ultra_dark_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get()), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get()), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
 
     private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound, int ticks) {
         return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, ticks), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1567,11 +1537,11 @@ public class GenerationsItems {
 
     public static RegistrySupplier<Item> createBadge(String id, Object object/*ElementType elementType*/) {
         /*elementType*/
-        return BADGES.register(id, () -> new BadgeItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES)));
+        return BADGES.register(id, () -> new BadgeItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.AWARDS)));
     }
 
     public static RegistrySupplier<Item> createRibbon(String id) {
-        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.RIBBONS)));
+        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.AWARDS)));
     }
     
     public static void init() {
