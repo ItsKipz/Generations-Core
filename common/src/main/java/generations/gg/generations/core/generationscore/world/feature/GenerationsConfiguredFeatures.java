@@ -63,7 +63,7 @@ public class GenerationsConfiguredFeatures {
     public static void bootStrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        var aluminiumOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.ALUMINUM_ORE_SET);
+        var aluminiumOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.FOSSIL_ORE_SET);
         register(context, ORE_ALUMINUM, Feature.ORE, new OreConfiguration(aluminiumOres, 9, 0.0F));
         register(context, ORE_ALUMINUM_SMALL, Feature.ORE, new OreConfiguration(aluminiumOres, 4, 0.0F));
 

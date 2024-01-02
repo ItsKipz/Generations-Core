@@ -33,11 +33,179 @@ public class GenerationsBlocks {
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
     public static final BlockBehaviour.Properties ULTRA_BLOCK_SETTINGS = BlockBehaviour.Properties.copy(Blocks.GLASS).lightLevel(value -> 15);
-    public static final RegistrySupplier<Block> POKEMART_SIGN = registerBlockItem("pokemart_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Building Blocks
+    //Wood
+    //Stone
+    //Chargestone
+    public static final GenerationsFullBlockSet CHARGE_STONE_SET = new GenerationsFullBlockSet("charge_stone", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.CHARGE_STONE);
+    public static final GenerationsBlockSet CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
+    public static final GenerationsBlockSet MOSSY_CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("mossy_charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE));
+    public static final RegistrySupplier<Block> SMOOTH_CHARGE_STONE = registerStone("smooth_charge_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
+    public static final RegistrySupplier<SlabBlock> SMOOTH_CHARGE_STONE_SLAB = registerStone("smooth_charge_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE_SLAB)));
+    public static final RegistrySupplier<Block> CHARGE_STONE_BRICKS = registerStone("charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistrySupplier<Block> CRACKED_CHARGE_STONE_BRICKS = registerStone("cracked_charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
+    public static final RegistrySupplier<StairBlock> CHARGE_STONE_BRICK_STAIRS = registerStone("charge_stone_brick_stairs", () -> new StairBlock(Blocks.STONE_BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(CHARGE_STONE_BRICKS.get())));
+    public static final RegistrySupplier<SlabBlock> CHARGE_STONE_BRICK_SLAB = registerStone("charge_stone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CHARGE_STONE_BRICKS.get())));
+    public static final RegistrySupplier<WallBlock> CHARGE_STONE_BRICK_WALL = registerStone("charge_stone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CHARGE_STONE_BRICKS.get())));
+    public static final RegistrySupplier<Block> CHISELED_CHARGE_STONE_BRICKS = registerStone("chiseled_charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
+    public static final GenerationsBlockSet MOSSY_CHARGE_STONE_BRICKS_SET = new GenerationsBlockSet("mossy_charge_stone_brick", registerBlockItem("mossy_charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS))), BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_CHARGE_STONE = registerStone("infested_charge_stone", () -> new InfestedBlock(CHARGE_STONE_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_CHARGE_COBBLESTONE = registerStone("infested_charge_cobblestone", () -> new InfestedBlock(CHARGE_COBBLESTONE_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_COBBLESTONE)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_CHARGE_STONE_BRICKS = registerStone("infested_charge_stone_bricks", () -> new InfestedBlock(CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_MOSSY_CHARGE_STONE_BRICKS = registerStone("infested_mossy_charge_stone_bricks", () -> new InfestedBlock(MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_MOSSY_STONE_BRICKS)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_CRACKED_CHARGE_STONE_BRICKS = registerStone("infested_cracked_charge_stone_bricks", () -> new InfestedBlock(CRACKED_CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_CRACKED_STONE_BRICKS)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_CHISELED_CHARGE_STONE_BRICKS = registerStone("infested_chiseled_charge_stone_bricks", () -> new InfestedBlock(CHISELED_CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_CHISELED_STONE_BRICKS)));
+    public static final GenerationsBlockSet BRIGHT_CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("bright_charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).lightLevel(lightLevel -> 30));
+    public static final GenerationsBlockSet GLOWING_CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("glowing_charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).lightLevel(lightLevel -> 15));
+    public static final RegistrySupplier<Block> CHARGE_DRIPSTONE_BLOCK = registerStone("charge_dripstone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)));
+    public static final RegistrySupplier<PointedChargeDripstoneBlock> POINTED_CHARGE_DRIPSTONE = registerStone("pointed_charge_dripstone", () -> new PointedChargeDripstoneBlock(BlockBehaviour.Properties.copy(Blocks.POINTED_DRIPSTONE)));
+    //Volcanic
+    public static final RegistrySupplier<Block> VOLCANIC_STONE = registerStone("volcanic_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<StairBlock> VOLCANIC_STONE_STAIRS = registerStone("volcanic_stone_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
+    public static final RegistrySupplier<SlabBlock> VOLCANIC_STONE_SLAB = registerStone("volcanic_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
+    public static final RegistrySupplier<WallBlock> VOLCANIC_STONE_WALL = registerStone("volcanic_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
+    public static final RegistrySupplier<ButtonBlock> VOLCANIC_STONE_BUTTON = registerStone("volcanic_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), GenerationsBlockSetTypes.VOLCANIC_STONE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> VOLCANIC_STONE_PRESSURE_PLATE = registerStone("volcanic_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), GenerationsBlockSetTypes.VOLCANIC_STONE));
+    public static final GenerationsBlockSet VOLCANIC_COBBLESTONE_SET = new GenerationsBlockSet("volcanic_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
+    public static final GenerationsBlockSet MOSSY_VOLCANIC_COBBLESTONE_SET = new GenerationsBlockSet("mossy_volcanic_cobblestone", BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE));
+    public static final RegistrySupplier<Block> SMOOTH_VOLCANIC_STONE = registerStone("smooth_volcanic_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
+    public static final RegistrySupplier<SlabBlock> SMOOTH_VOLCANIC_STONE_SLAB = registerStone("smooth_volcanic_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_VOLCANIC_STONE.get())));
+    public static final RegistrySupplier<Block> VOLCANIC_STONE_BRICKS = registerStone("volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+    public static final RegistrySupplier<Block> CRACKED_VOLCANIC_STONE_BRICKS = registerStone("cracked_volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
+    public static final RegistrySupplier<StairBlock> VOLCANIC_STONE_BRICK_STAIRS = registerStone("volcanic_stone_brick_stairs", () -> new StairBlock(Blocks.STONE_BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(VOLCANIC_STONE_BRICKS.get())));
+    public static final RegistrySupplier<SlabBlock> VOLCANIC_STONE_BRICK_SLAB = registerStone("volcanic_stone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE_BRICKS.get())));
+    public static final RegistrySupplier<WallBlock> VOLCANIC_STONE_BRICK_WALL = registerStone("volcanic_stone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE_BRICKS.get())));
+    public static final RegistrySupplier<Block> CHISELED_VOLCANIC_STONE_BRICKS = registerStone("chiseled_volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
+    public static final GenerationsBlockSet MOSSY_VOLCANIC_STONE_BRICKS_SET = new GenerationsBlockSet("mossy_volcanic_stone_brick", registerBlockItem("mossy_volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS))), BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_VOLCANIC_STONE = registerStone("infested_volcanic_stone", () -> new InfestedBlock(VOLCANIC_STONE.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_VOLCANIC_COBBLESTONE = registerStone("infested_volcanic_cobblestone", () -> new InfestedBlock(VOLCANIC_COBBLESTONE_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_COBBLESTONE)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_VOLCANIC_STONE_BRICKS = registerStone("infested_volcanic_stone_bricks", () -> new InfestedBlock(VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_MOSSY_VOLCANIC_STONE_BRICKS = registerStone("infested_mossy_volcanic_stone_bricks", () -> new InfestedBlock(MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_CRACKED_VOLCANIC_STONE_BRICKS = registerStone("infested_cracked_volcanic_stone_bricks", () -> new InfestedBlock(CRACKED_VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
+    public static final RegistrySupplier<InfestedBlock> INFESTED_CHISELED_VOLCANIC_STONE_BRICKS = registerStone("infested_chiseled_volcanic_stone_bricks", () -> new InfestedBlock(CHISELED_VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
+    public static final RegistrySupplier<Block> VOLCANIC_FIRESTONE = registerBlockItem("volcanic_firestone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final GenerationsBlockSet VOLCANIC_ROCK_SET = new GenerationsBlockSet("volcanic_rock", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.COLOR_BROWN));
+    //Other
+    public static final GenerationsBlockSet BLEACH_STONE_SET = new GenerationsBlockSet("bleach_stone", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet COOL_STONE_SET = new GenerationsBlockSet("cool_stone", BlockBehaviour.Properties.copy(Blocks.STONE));
+    //Rocks
+    public static final GenerationsBlockSet ROCK_SET = new GenerationsBlockSet("rock", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CAVE_ROCK_SET = new GenerationsBlockSet("cave_rock", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet GRAY_CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("gray_cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet ICE_CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("ice_cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.ICE));
+    //Cobble Ruins
+    public static final GenerationsBlockSet COBBLE_RUINS_1_SET = new GenerationsBlockSet("cobble_ruins_1", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet COBBLE_RUINS_2_SET = new GenerationsBlockSet("cobble_ruins_2", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet COBBLE_RUINS_3_SET = new GenerationsBlockSet("cobble_ruins_3", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet COBBLE_RUINS_4_SET = new GenerationsBlockSet("cobble_ruins_4", BlockBehaviour.Properties.copy(Blocks.STONE));
+    //Enchanted Obsidian
+    public static final GenerationsFullBlockSet ENCHANTED_OBSIDIAN_SET = new GenerationsFullBlockSet("enchanted_obsidian", BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), GenerationsBlockSetTypes.ENCHANTED_OBISIDIAN, registerBlockItem("enchanted_obsidian", () -> new EnchantedObsidianBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN))));
+
+
+    //Brick
+    //Sand
+    //Prismarine
+    //Random
+    //Gems
+    //Other
+
+    //Colored Blocks
+    //PokeBrick
+    public static final GenerationsFullBlockSet WHITE_POKE_BRICK_SET = new GenerationsFullBlockSet("white_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.WHITE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIGHT_GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("light_gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIGHT_GRAY), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.GRAY), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BLACK_POKE_BRICK_SET = new GenerationsFullBlockSet("black_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BLACK), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BROWN_POKE_BRICK_SET = new GenerationsFullBlockSet("brown_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BROWN), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet RED_POKE_BRICK_SET = new GenerationsFullBlockSet("red_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.RED), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet ORANGE_POKE_BRICK_SET = new GenerationsFullBlockSet("orange_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.ORANGE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet YELLOW_POKE_BRICK_SET = new GenerationsFullBlockSet("yellow_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.YELLOW), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIME_POKE_BRICK_SET = new GenerationsFullBlockSet("lime_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIME), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet GREEN_POKE_BRICK_SET = new GenerationsFullBlockSet("green_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.GREEN), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet CYAN_POKE_BRICK_SET = new GenerationsFullBlockSet("cyan_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.CYAN), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIGHT_BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("light_blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIGHT_BLUE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BLUE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet PURPLE_POKE_BRICK_SET = new GenerationsFullBlockSet("purple_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.PURPLE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet MAGENTA_POKE_BRICK_SET = new GenerationsFullBlockSet("magenta_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.MAGENTA), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet PINK_POKE_BRICK_SET = new GenerationsFullBlockSet("pink_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.PINK), GenerationsBlockSetTypes.POKE_BRICK);
+    //Shingles
+    public static final GenerationsBlockSet WHITE_SHINGLES_SET = new GenerationsBlockSet("white_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet LIGHT_GRAY_SHINGLES_SET = new GenerationsBlockSet("light_gray_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet GRAY_SHINGLES_SET = new GenerationsBlockSet("gray_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet BLACK_SHINGLES_SET = new GenerationsBlockSet("black_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet BROWN_SHINGLES_SET = new GenerationsBlockSet("brown_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet RED_SHINGLES_SET = new GenerationsBlockSet("red_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet ORANGE_SHINGLES_SET = new GenerationsBlockSet("orange_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet YELLOW_SHINGLES_SET = new GenerationsBlockSet("yellow_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet LIME_SHINGLES_SET = new GenerationsBlockSet("lime_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet GREEN_SHINGLES_SET = new GenerationsBlockSet("green_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet CYAN_SHINGLES_SET = new GenerationsBlockSet("cyan_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet LIGHT_BLUE_SHINGLES_SET = new GenerationsBlockSet("light_blue_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet BLUE_SHINGLES_SET = new GenerationsBlockSet("blue_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet PURPLE_SHINGLES_SET = new GenerationsBlockSet("purple_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet MAGENTA_SHINGLES_SET = new GenerationsBlockSet("magenta_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet PINK_SHINGLES_SET = new GenerationsBlockSet("pink_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    //Marble
+    public static final GenerationsFullBlockSet WHITE_MARBLE_SET = new GenerationsFullBlockSet("white_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.WHITE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIGHT_GRAY_MARBLE_SET = new GenerationsFullBlockSet("light_gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIGHT_GRAY), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet GRAY_MARBLE_SET = new GenerationsFullBlockSet("gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BLACK_MARBLE_SET = new GenerationsFullBlockSet("black_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BLACK), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BROWN_MARBLE_SET = new GenerationsFullBlockSet("brown_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BROWN), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet RED_MARBLE_SET = new GenerationsFullBlockSet("red_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.RED), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet ORANGE_MARBLE_SET = new GenerationsFullBlockSet("orange_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.ORANGE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet YELLOW_MARBLE_SET = new GenerationsFullBlockSet("yellow_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.YELLOW), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIME_MARBLE_SET = new GenerationsFullBlockSet("lime_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIME), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet GREEN_MARBLE_SET = new GenerationsFullBlockSet("green_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GREEN), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet CYAN_MARBLE_SET = new GenerationsFullBlockSet("cyan_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.CYAN), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet POWDER_BLUE_MARBLE_SET = new GenerationsFullBlockSet("powder_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIGHT_BLUE_MARBLE_SET = new GenerationsFullBlockSet("light_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIGHT_BLUE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BLUE_MARBLE_SET = new GenerationsFullBlockSet("blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BLUE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet PURPLE_MARBLE_SET = new GenerationsFullBlockSet("purple_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.PURPLE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet MAGENTA_MARBLE_SET = new GenerationsFullBlockSet("magenta_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.MAGENTA), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet PINK_MARBLE_SET = new GenerationsFullBlockSet("pink_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.PINK), GenerationsBlockSetTypes.MARBLE);
+    //Ultra
+    public static final GenerationsUltraBlockSet ULTRA_WHITE_SET = new GenerationsUltraBlockSet("ultra_white", registerUltraBlock("ultra_white", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.WHITE))));
+    public static final GenerationsUltraBlockSet ULTRA_LIGHT_GRAY_SET = new GenerationsUltraBlockSet("ultra_light_gray", registerUltraBlock("ultra_light_gray", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIGHT_GRAY))));
+    public static final GenerationsUltraBlockSet ULTRA_GRAY_SET = new GenerationsUltraBlockSet("ultra_gray", registerUltraBlock("ultra_gray", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.GRAY))));
+    public static final GenerationsUltraBlockSet ULTRA_BLACK_SET = new GenerationsUltraBlockSet("ultra_black", registerUltraBlock("ultra_black", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BLACK))));
+    public static final GenerationsUltraBlockSet ULTRA_BROWN_SET = new GenerationsUltraBlockSet("ultra_brown", registerUltraBlock("ultra_brown", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BROWN))));
+    public static final GenerationsUltraBlockSet ULTRA_RED_SET = new GenerationsUltraBlockSet("ultra_red", registerUltraBlock("ultra_red", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.RED))));
+    public static final GenerationsUltraBlockSet ULTRA_ORANGE_SET = new GenerationsUltraBlockSet("ultra_orange", registerUltraBlock("ultra_orange", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.ORANGE))));
+    public static final GenerationsUltraBlockSet ULTRA_YELLOW_SET = new GenerationsUltraBlockSet("ultra_yellow", registerUltraBlock("ultra_yellow", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.YELLOW))));
+    public static final GenerationsUltraBlockSet ULTRA_LIME_SET = new GenerationsUltraBlockSet("ultra_lime", registerUltraBlock("ultra_lime", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIME))));
+    public static final GenerationsUltraBlockSet ULTRA_GREEN_SET = new GenerationsUltraBlockSet("ultra_green", registerUltraBlock("ultra_green", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.GREEN))));
+    public static final GenerationsUltraBlockSet ULTRA_CYAN_SET = new GenerationsUltraBlockSet("ultra_cyan", registerUltraBlock("ultra_cyan", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.CYAN))));
+    public static final GenerationsUltraBlockSet ULTRA_LIGHT_BLUE_SET = new GenerationsUltraBlockSet("ultra_light_blue", registerUltraBlock("ultra_light_blue", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIGHT_BLUE))));
+    public static final GenerationsUltraBlockSet ULTRA_BLUE_SET = new GenerationsUltraBlockSet("ultra_blue", registerUltraBlock("ultra_blue", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BLUE))));
+    public static final GenerationsUltraBlockSet ULTRA_PURPLE_SET = new GenerationsUltraBlockSet("ultra_purple", registerUltraBlock("ultra_purple", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.PURPLE))));
+    public static final GenerationsUltraBlockSet ULTRA_MAGENTA_SET = new GenerationsUltraBlockSet("ultra_magenta", registerUltraBlock("ultra_magenta", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.MAGENTA))));
+    public static final GenerationsUltraBlockSet ULTRA_PINK_SET = new GenerationsUltraBlockSet("ultra_pink", registerUltraBlock("ultra_pink", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.PINK))));
+
+    //Natural Blocks
+    //Ores
+    //Plants
+
+    //Functional Blocks
+    //Vanilla
+    //Pokemon
+    //Container
+    //Shrine
+
+    //Decoration
+    //Pillar
+    //Ball Display
+    //Sign
+    //Swivel Chair
+    //Bean Bag
+    //Outdoor
+    //Indoor
+    //PokeDoll
 
     /**
      * PokeCenter
      */
+    public static final RegistrySupplier<Block> POKEMART_SIGN = registerBlockItem("pokemart_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> POKECENTER_SIGN = registerBlockItem("pokecenter_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> POKECENTER_SCARLET_SIGN = registerBlockItem("pokecenter_scarlet_sign", () -> new PokecenterScarletSignBlock(BlockBehaviour.Properties.of().lightLevel((state) -> 15).noLootTable()));
     public static final RegistrySupplier<DoorBlock> POKECENTER_DOOR = registerBlockItem("pokecenter_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.OAK));
@@ -78,11 +246,6 @@ public class GenerationsBlocks {
 
     public static final GenerationsBlockSet ICE_PILLAR_SIDE_SET = new GenerationsBlockSet("ice_pillar_side", BlockBehaviour.Properties.copy(Blocks.ICE));
     public static final GenerationsBlockSet ICE_PILLAR_TOP_SET = new GenerationsBlockSet("ice_pillar_top", BlockBehaviour.Properties.copy(Blocks.ICE));
-    public static final GenerationsBlockSet ROCK_SET = new GenerationsBlockSet("rock", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet CAVE_ROCK_SET = new GenerationsBlockSet("cave_rock", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet GRAY_CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("gray_cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet ICE_CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("ice_cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.ICE));
     public static final GenerationsBlockSet BRIDGE_BLOCK_SET = new GenerationsBlockSet("bridge_block", BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS));
 
 
@@ -123,56 +286,7 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<CursedCarvedPumpkinBlock> CURSED_CARVED_PUMPKIN = registerBlockItem("cursed_carved_pumpkin", () -> new CursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.CARVED_PUMPKIN)));
     public static final RegistrySupplier<CursedCarvedPumpkinBlock> CURSED_JACK_O_LANTERN = registerBlockItem("cursed_jack_o_lantern", () -> new CursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN)));
 
-    public static final GenerationsBlockSet COBBLE_RUINS_1_SET = new GenerationsBlockSet("cobble_ruins_1", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet COBBLE_RUINS_2_SET = new GenerationsBlockSet("cobble_ruins_2", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet COBBLE_RUINS_3_SET = new GenerationsBlockSet("cobble_ruins_3", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet COBBLE_RUINS_4_SET = new GenerationsBlockSet("cobble_ruins_4", BlockBehaviour.Properties.copy(Blocks.STONE));
-
-    /**
-     * Ultra Blocks
-     */
-
-    public static final GenerationsUltraBlockSet ULTRA_WHITE_SET = new GenerationsUltraBlockSet("ultra_white", registerUltraBlock("ultra_white", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.WHITE))));
-    public static final GenerationsUltraBlockSet ULTRA_LIGHT_GRAY_SET = new GenerationsUltraBlockSet("ultra_light_gray", registerUltraBlock("ultra_light_gray", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIGHT_GRAY))));
-    public static final GenerationsUltraBlockSet ULTRA_GRAY_SET = new GenerationsUltraBlockSet("ultra_gray", registerUltraBlock("ultra_gray", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.GRAY))));
-    public static final GenerationsUltraBlockSet ULTRA_BLACK_SET = new GenerationsUltraBlockSet("ultra_black", registerUltraBlock("ultra_black", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BLACK))));
-    public static final GenerationsUltraBlockSet ULTRA_BROWN_SET = new GenerationsUltraBlockSet("ultra_brown", registerUltraBlock("ultra_brown", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BROWN))));
-    public static final GenerationsUltraBlockSet ULTRA_RED_SET = new GenerationsUltraBlockSet("ultra_red", registerUltraBlock("ultra_red", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.RED))));
-    public static final GenerationsUltraBlockSet ULTRA_ORANGE_SET = new GenerationsUltraBlockSet("ultra_orange", registerUltraBlock("ultra_orange", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.ORANGE))));
-    public static final GenerationsUltraBlockSet ULTRA_YELLOW_SET = new GenerationsUltraBlockSet("ultra_yellow", registerUltraBlock("ultra_yellow", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.YELLOW))));
-    public static final GenerationsUltraBlockSet ULTRA_LIME_SET = new GenerationsUltraBlockSet("ultra_lime", registerUltraBlock("ultra_lime", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIME))));
-    public static final GenerationsUltraBlockSet ULTRA_GREEN_SET = new GenerationsUltraBlockSet("ultra_green", registerUltraBlock("ultra_green", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.GREEN))));
-    public static final GenerationsUltraBlockSet ULTRA_CYAN_SET = new GenerationsUltraBlockSet("ultra_cyan", registerUltraBlock("ultra_cyan", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.CYAN))));
-    public static final GenerationsUltraBlockSet ULTRA_LIGHT_BLUE_SET = new GenerationsUltraBlockSet("ultra_light_blue", registerUltraBlock("ultra_light_blue", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIGHT_BLUE))));
-    public static final GenerationsUltraBlockSet ULTRA_BLUE_SET = new GenerationsUltraBlockSet("ultra_blue", registerUltraBlock("ultra_blue", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BLUE))));
-    public static final GenerationsUltraBlockSet ULTRA_PURPLE_SET = new GenerationsUltraBlockSet("ultra_purple", registerUltraBlock("ultra_purple", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.PURPLE))));
-    public static final GenerationsUltraBlockSet ULTRA_MAGENTA_SET = new GenerationsUltraBlockSet("ultra_magenta", registerUltraBlock("ultra_magenta", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.MAGENTA))));
-    public static final GenerationsUltraBlockSet ULTRA_PINK_SET = new GenerationsUltraBlockSet("ultra_pink", registerUltraBlock("ultra_pink", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.PINK))));
-
     public static final RegistrySupplier<Block> ULTRA_SAND = registerBlockItem("ultra_sand", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-
-
-    /**
-     * Marble block sets
-     */
-
-    public static final GenerationsFullBlockSet WHITE_MARBLE_SET = new GenerationsFullBlockSet("white_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.WHITE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet LIGHT_GRAY_MARBLE_SET = new GenerationsFullBlockSet("light_gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIGHT_GRAY), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet GRAY_MARBLE_SET = new GenerationsFullBlockSet("gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet BLACK_MARBLE_SET = new GenerationsFullBlockSet("black_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BLACK), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet BROWN_MARBLE_SET = new GenerationsFullBlockSet("brown_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BROWN), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet RED_MARBLE_SET = new GenerationsFullBlockSet("red_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.RED), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet ORANGE_MARBLE_SET = new GenerationsFullBlockSet("orange_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.ORANGE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet YELLOW_MARBLE_SET = new GenerationsFullBlockSet("yellow_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.YELLOW), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet LIME_MARBLE_SET = new GenerationsFullBlockSet("lime_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIME), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet GREEN_MARBLE_SET = new GenerationsFullBlockSet("green_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GREEN), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet CYAN_MARBLE_SET = new GenerationsFullBlockSet("cyan_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.CYAN), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet POWDER_BLUE_MARBLE_SET = new GenerationsFullBlockSet("powder_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet LIGHT_BLUE_MARBLE_SET = new GenerationsFullBlockSet("light_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIGHT_BLUE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet BLUE_MARBLE_SET = new GenerationsFullBlockSet("blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BLUE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet PURPLE_MARBLE_SET = new GenerationsFullBlockSet("purple_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.PURPLE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet MAGENTA_MARBLE_SET = new GenerationsFullBlockSet("magenta_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.MAGENTA), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet PINK_MARBLE_SET = new GenerationsFullBlockSet("pink_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.PINK), GenerationsBlockSetTypes.MARBLE);
 
     /**
      * Unown Blocks
@@ -206,81 +320,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> UNOWN_BLOCK_BLANK = registerBlockItem("unown_block_blank", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> UNOWN_BLOCK_EXCLAMATION_MARK = registerBlockItem("unown_block_exclamation_mark", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> UNOWN_BLOCK_QUESTION_MARK = registerBlockItem("unown_block_question_mark", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-
-    /**
-     * Full ChargeStone Pallet
-     */
-    public static final GenerationsFullBlockSet CHARGE_STONE_SET = new GenerationsFullBlockSet("charge_stone", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.CHARGE_STONE);
-    public static final GenerationsBlockSet CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
-    public static final GenerationsBlockSet MOSSY_CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("mossy_charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE));
-    //Smooth ChargeStone
-    public static final RegistrySupplier<Block> SMOOTH_CHARGE_STONE = registerStone("smooth_charge_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
-    public static final RegistrySupplier<SlabBlock> SMOOTH_CHARGE_STONE_SLAB = registerStone("smooth_charge_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE_SLAB)));
-    //ChargeStoneBricks
-    public static final RegistrySupplier<Block> CHARGE_STONE_BRICKS = registerStone("charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
-    public static final RegistrySupplier<Block> CRACKED_CHARGE_STONE_BRICKS = registerStone("cracked_charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
-    public static final RegistrySupplier<StairBlock> CHARGE_STONE_BRICK_STAIRS = registerStone("charge_stone_brick_stairs", () -> new StairBlock(Blocks.STONE_BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(CHARGE_STONE_BRICKS.get())));
-    public static final RegistrySupplier<SlabBlock> CHARGE_STONE_BRICK_SLAB = registerStone("charge_stone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CHARGE_STONE_BRICKS.get())));
-    public static final RegistrySupplier<WallBlock> CHARGE_STONE_BRICK_WALL = registerStone("charge_stone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CHARGE_STONE_BRICKS.get())));
-    public static final RegistrySupplier<Block> CHISELED_CHARGE_STONE_BRICKS = registerStone("chiseled_charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
-
-    public static final GenerationsBlockSet MOSSY_CHARGE_STONE_BRICKS_SET = new GenerationsBlockSet("mossy_charge_stone_brick", registerBlockItem("mossy_charge_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS))), BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS));
-    //Infested blocks
-    public static final RegistrySupplier<InfestedBlock> INFESTED_CHARGE_STONE = registerStone("infested_charge_stone", () -> new InfestedBlock(CHARGE_STONE_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_CHARGE_COBBLESTONE = registerStone("infested_charge_cobblestone", () -> new InfestedBlock(CHARGE_COBBLESTONE_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_COBBLESTONE)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_CHARGE_STONE_BRICKS = registerStone("infested_charge_stone_bricks", () -> new InfestedBlock(CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_MOSSY_CHARGE_STONE_BRICKS = registerStone("infested_mossy_charge_stone_bricks", () -> new InfestedBlock(MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_MOSSY_STONE_BRICKS)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_CRACKED_CHARGE_STONE_BRICKS = registerStone("infested_cracked_charge_stone_bricks", () -> new InfestedBlock(CRACKED_CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_CRACKED_STONE_BRICKS)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_CHISELED_CHARGE_STONE_BRICKS = registerStone("infested_chiseled_charge_stone_bricks", () -> new InfestedBlock(CHISELED_CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_CHISELED_STONE_BRICKS)));
-    //Full ChargeStone Pallet ^
-
-    public static final GenerationsBlockSet BRIGHT_CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("bright_charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).lightLevel(lightLevel -> 30));
-    public static final GenerationsBlockSet GLOWING_CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("glowing_charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).lightLevel(lightLevel -> 15));
-    public static final RegistrySupplier<PointedChargeDripstoneBlock> POINTED_CHARGE_DRIPSTONE = registerStone("pointed_charge_dripstone", () -> new PointedChargeDripstoneBlock(BlockBehaviour.Properties.copy(Blocks.POINTED_DRIPSTONE)));
-    public static final RegistrySupplier<Block> CHARGE_DRIPSTONE_BLOCK = registerStone("charge_dripstone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)));
-
-    /**
-     * Volcanic Stone Pallet
-     */
-    public static final RegistrySupplier<Block> VOLCANIC_STONE = registerStone("volcanic_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> VOLCANIC_STONE_STAIRS = registerStone("volcanic_stone_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
-    public static final RegistrySupplier<SlabBlock> VOLCANIC_STONE_SLAB = registerStone("volcanic_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
-    public static final RegistrySupplier<WallBlock> VOLCANIC_STONE_WALL = registerStone("volcanic_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
-    public static final RegistrySupplier<ButtonBlock> VOLCANIC_STONE_BUTTON = registerStone("volcanic_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), GenerationsBlockSetTypes.VOLCANIC_STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> VOLCANIC_STONE_PRESSURE_PLATE = registerStone("volcanic_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), GenerationsBlockSetTypes.VOLCANIC_STONE));
-
-    //Volcanic CobbleStone
-    public static final GenerationsBlockSet VOLCANIC_COBBLESTONE_SET = new GenerationsBlockSet("volcanic_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
-
-    //Mossy Volcanic CobbleStone
-    public static final GenerationsBlockSet MOSSY_VOLCANIC_COBBLESTONE_SET = new GenerationsBlockSet("mossy_volcanic_cobblestone", BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE));
-
-    //Smooth Volcanic Stone
-    public static final RegistrySupplier<Block> SMOOTH_VOLCANIC_STONE = registerStone("smooth_volcanic_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
-    public static final RegistrySupplier<SlabBlock> SMOOTH_VOLCANIC_STONE_SLAB = registerStone("smooth_volcanic_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_VOLCANIC_STONE.get())));
-
-    //Volcanic Stone Bricks
-    public static final RegistrySupplier<Block> VOLCANIC_STONE_BRICKS = registerStone("volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
-    public static final RegistrySupplier<Block> CRACKED_VOLCANIC_STONE_BRICKS = registerStone("cracked_volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
-    public static final RegistrySupplier<StairBlock> VOLCANIC_STONE_BRICK_STAIRS = registerStone("volcanic_stone_brick_stairs", () -> new StairBlock(Blocks.STONE_BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(VOLCANIC_STONE_BRICKS.get())));
-    public static final RegistrySupplier<SlabBlock> VOLCANIC_STONE_BRICK_SLAB = registerStone("volcanic_stone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE_BRICKS.get())));
-    public static final RegistrySupplier<WallBlock> VOLCANIC_STONE_BRICK_WALL = registerStone("volcanic_stone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE_BRICKS.get())));
-    public static final RegistrySupplier<Block> CHISELED_VOLCANIC_STONE_BRICKS = registerStone("chiseled_volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_STONE_BRICKS)));
-
-    //Mossy Volcanic Stone Bricks
-    public static final GenerationsBlockSet MOSSY_VOLCANIC_STONE_BRICKS_SET = new GenerationsBlockSet("mossy_volcanic_stone_brick", registerBlockItem("mossy_volcanic_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS))), BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS));
-    //Infested Volcanic Stone Bricks
-    public static final RegistrySupplier<InfestedBlock> INFESTED_VOLCANIC_STONE = registerStone("infested_volcanic_stone", () -> new InfestedBlock(VOLCANIC_STONE.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_VOLCANIC_COBBLESTONE = registerStone("infested_volcanic_cobblestone", () -> new InfestedBlock(VOLCANIC_COBBLESTONE_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_COBBLESTONE)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_VOLCANIC_STONE_BRICKS = registerStone("infested_volcanic_stone_bricks", () -> new InfestedBlock(VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_MOSSY_VOLCANIC_STONE_BRICKS = registerStone("infested_mossy_volcanic_stone_bricks", () -> new InfestedBlock(MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_CRACKED_VOLCANIC_STONE_BRICKS = registerStone("infested_cracked_volcanic_stone_bricks", () -> new InfestedBlock(CRACKED_VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
-    public static final RegistrySupplier<InfestedBlock> INFESTED_CHISELED_VOLCANIC_STONE_BRICKS = registerStone("infested_chiseled_volcanic_stone_bricks", () -> new InfestedBlock(CHISELED_VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.copy(Blocks.INFESTED_STONE_BRICKS)));
-    //Full Volcanic Stone Pallet^
-
-    public static final RegistrySupplier<Block> VOLCANIC_FIRESTONE = registerBlockItem("volcanic_firestone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-
-    public static final GenerationsBlockSet VOLCANIC_ROCK_SET = new GenerationsBlockSet("volcanic_rock", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.COLOR_BROWN));
 
     /**
      * Battle Subway Blocks
@@ -337,29 +376,6 @@ public class GenerationsBlocks {
     public static final GenerationsBlockSet MIRRORED_FLOOR_1_SET = new GenerationsBlockSet("mirrored_floor_1", BlockBehaviour.Properties.copy(Blocks.STONE));
     public static final GenerationsBlockSet MIRRORED_FLOOR_2_SET = new GenerationsBlockSet("mirrored_floor_2", BlockBehaviour.Properties.copy(Blocks.STONE));
     public static final GenerationsBlockSet MIRRORED_FLOOR_3_SET = new GenerationsBlockSet("mirrored_floor_3", BlockBehaviour.Properties.copy(Blocks.STONE));
-
-    public static final GenerationsFullBlockSet ENCHANTED_OBSIDIAN_SET = new GenerationsFullBlockSet("enchanted_obsidian", BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), GenerationsBlockSetTypes.ENCHANTED_OBISIDIAN, registerBlockItem("enchanted_obsidian", () -> new EnchantedObsidianBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN))));
-
-    /**
-     * Poke Bricks
-     */
-
-    public static final GenerationsFullBlockSet WHITE_POKE_BRICK_SET = new GenerationsFullBlockSet("white_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.WHITE), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet LIGHT_GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("light_gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIGHT_GRAY), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.GRAY), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet BLACK_POKE_BRICK_SET = new GenerationsFullBlockSet("black_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BLACK), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet BROWN_POKE_BRICK_SET = new GenerationsFullBlockSet("brown_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BROWN), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet RED_POKE_BRICK_SET = new GenerationsFullBlockSet("red_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.RED), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet ORANGE_POKE_BRICK_SET = new GenerationsFullBlockSet("orange_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.ORANGE), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet YELLOW_POKE_BRICK_SET = new GenerationsFullBlockSet("yellow_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.YELLOW), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet LIME_POKE_BRICK_SET = new GenerationsFullBlockSet("lime_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIME), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet GREEN_POKE_BRICK_SET = new GenerationsFullBlockSet("green_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.GREEN), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet CYAN_POKE_BRICK_SET = new GenerationsFullBlockSet("cyan_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.CYAN), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet LIGHT_BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("light_blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIGHT_BLUE), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BLUE), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet PURPLE_POKE_BRICK_SET = new GenerationsFullBlockSet("purple_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.PURPLE), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet MAGENTA_POKE_BRICK_SET = new GenerationsFullBlockSet("magenta_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.MAGENTA), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet PINK_POKE_BRICK_SET = new GenerationsFullBlockSet("pink_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.PINK), GenerationsBlockSetTypes.POKE_BRICK);
     /**
      * Ore Blocks
      */
@@ -420,29 +436,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> RICH_SOIL_3 = registerBlockItem("rich_soil_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
     public static final RegistrySupplier<Block> RICH_SOIL_4 = registerBlockItem("rich_soil_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 
-    //Bleach Stone
-    public static final GenerationsBlockSet BLEACH_STONE_SET = new GenerationsBlockSet("bleach_stone", BlockBehaviour.Properties.copy(Blocks.STONE));
-
-    //Shingles
-    public static final GenerationsBlockSet WHITE_SHINGLES_SET = new GenerationsBlockSet("white_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet LIGHT_GRAY_SHINGLES_SET = new GenerationsBlockSet("light_gray_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet GRAY_SHINGLES_SET = new GenerationsBlockSet("gray_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet BLACK_SHINGLES_SET = new GenerationsBlockSet("black_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet BROWN_SHINGLES_SET = new GenerationsBlockSet("brown_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet RED_SHINGLES_SET = new GenerationsBlockSet("red_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet ORANGE_SHINGLES_SET = new GenerationsBlockSet("orange_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet YELLOW_SHINGLES_SET = new GenerationsBlockSet("yellow_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet LIME_SHINGLES_SET = new GenerationsBlockSet("lime_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet GREEN_SHINGLES_SET = new GenerationsBlockSet("green_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet CYAN_SHINGLES_SET = new GenerationsBlockSet("cyan_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet LIGHT_BLUE_SHINGLES_SET = new GenerationsBlockSet("light_blue_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet BLUE_SHINGLES_SET = new GenerationsBlockSet("blue_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet PURPLE_SHINGLES_SET = new GenerationsBlockSet("purple_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet MAGENTA_SHINGLES_SET = new GenerationsBlockSet("magenta_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-    public static final GenerationsBlockSet PINK_SHINGLES_SET = new GenerationsBlockSet("pink_shingles", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-
-    public static final GenerationsBlockSet COOL_STONE_SET = new GenerationsBlockSet("cool_stone", BlockBehaviour.Properties.copy(Blocks.STONE));
-
     /**
      * 1 Block Tall Ballonlea Mushrooms
      */
@@ -491,7 +484,7 @@ public class GenerationsBlocks {
         register(name, properties -> new GenericChestBlockItem(block.get(), properties));
         return block;
     }
-    
+
     private static <T extends Block> RegistrySupplier<T> registerStone(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = STONE.register(name, blockSupplier);
         register(name, properties -> new BlockItem(block.get(), properties));

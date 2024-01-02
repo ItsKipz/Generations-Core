@@ -32,19 +32,16 @@ public class GenerationsOres {
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_MOON_STONE_ORE = registerBlockItem("charge_stone_moon_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	 */
 
-	public static final GenerationsOreSet MEGASTONE_ORE_SET = new GenerationsOreSet("megastone_ore", GenerationsItems.MEGASTONE_SHARD);
-	public static final GenerationsOreSet METEORITE_ORE_SET = new GenerationsOreSet("meteorite_ore");
-
-
-	/**
-	 * Other Ores
-	 */
-	public static final GenerationsOreSet ALUMINUM_ORE_SET = new GenerationsOreSet("aluminum_ore", GenerationsItems.RAW_ALUMINUM);
-	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL);
+	//Ores
 	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore", GenerationsItems.RUBY);
 	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE);
-	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore", GenerationsItems.SILICON);
+	public static final GenerationsOreSet ALUMINUM_ORE_SET = new GenerationsOreSet("aluminum_ore", GenerationsItems.CRYSTAL);
+	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL);
+	public static final GenerationsOreSet METEORITE_ORE_SET = new GenerationsOreSet("meteorite_ore");
+	public static final GenerationsOreSet MEGASTONE_ORE_SET = new GenerationsOreSet("megastone_ore", GenerationsItems.MEGASTONE_SHARD);
 	public static final GenerationsOreSet Z_CRYSTAL_ORE_SET = new GenerationsOreSet("z_crystal_ore");
+
+	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore", GenerationsItems.SILICON);
 	public static final GenerationsOreSet FOSSIL_ORE_SET = new GenerationsOreSet("fossil_ore");
 
 
@@ -63,7 +60,7 @@ public class GenerationsOres {
 
 
 	private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-		GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.NATURAL)));
+		GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.NATURAL_BLOCKS)));
 	}
 
 	public static <T extends Block> RegistrySupplier<T> registerOreBlockItem(String name, Supplier<T> blockSupplier) {

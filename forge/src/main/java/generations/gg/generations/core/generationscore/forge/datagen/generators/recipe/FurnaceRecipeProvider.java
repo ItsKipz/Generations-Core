@@ -20,7 +20,6 @@ import java.util.function.Consumer;
 //TODO: Proper RecipeCategory assignment
 public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
 
-    private static final ImmutableList<ItemLike> ALUMINUM_SMELTABLES;
     private static final ImmutableList<ItemLike> Z_CRYSTAL_SMELTABLES;
     private static final ImmutableList<ItemLike> RUBY_SMELTABLES;
     private static final ImmutableList<ItemLike> SAPPHIRE_SMELTABLES;
@@ -30,7 +29,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
     private static final ImmutableList<ItemLike> METEORITE_SMELTABLES;
 
     static {
-        ALUMINUM_SMELTABLES = ImmutableList.of(GenerationsItems.RAW_ALUMINUM.get(), GenerationsOres.ALUMINUM_ORE_SET.getOre(), GenerationsOres.ALUMINUM_ORE_SET.getDeepslateOre());
         Z_CRYSTAL_SMELTABLES = GenerationsOres.Z_CRYSTAL_ORE_SET.getImmutableList();
         RUBY_SMELTABLES = GenerationsOres.RUBY_ORE_SET.getImmutableList();
         SAPPHIRE_SMELTABLES = GenerationsOres.SAPPHIRE_ORE_SET.getImmutableList();
@@ -53,7 +51,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         oreSmelting(consumer, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SAPPHIRE.get(), 1.0F, 200, "sapphire_gem");
         oreSmelting(consumer, CRYSTAL_SMELTABLES, RecipeCategory.MISC, GenerationsItems.CRYSTAL.get(), 1.0F, 200, "crystal_gem");
         oreSmelting(consumer, SILICON_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SILICON.get(), 1.0F, 200, "silicon");
-        oreBlasting(consumer, ALUMINUM_SMELTABLES, RecipeCategory.MISC, GenerationsItems.ALUMINUM_INGOT.get(), 1.0F, 100, "aluminum_ingot");
         oreBlasting(consumer, Z_CRYSTAL_SMELTABLES, RecipeCategory.MISC, GenerationsItems.Z_INGOT.get(), 1.0F, 100, "z_ingot");
         oreBlasting(consumer, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.get(), 1.0F, 100, "ruby_gem");
         oreBlasting(consumer, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SAPPHIRE.get(), 1.0F, 100, "sapphire_gem");
