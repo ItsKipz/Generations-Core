@@ -13,21 +13,9 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_crystal": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "generations_core:crystal"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:aether_leggings"
+        "recipe": "generations_core:copper_plate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -35,13 +23,12 @@
   "requirements": [
     [
       "has_copper_ingot",
-      "has_crystal",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:aether_leggings"
+      "generations_core:copper_plate"
     ]
   },
   "sends_telemetry_event": false

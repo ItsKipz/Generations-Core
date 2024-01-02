@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "category": "misc",
   "key": {
-    "X": {
+    "#": {
       "item": "minecraft:copper_ingot"
     },
-    "Y": {
-      "item": "generations_core:crystal"
+    "X": {
+      "item": "minecraft:iron_nugget"
     }
   },
   "pattern": [
-    "XXX",
-    "X X",
-    "Y Y"
+    "X#X",
+    "###",
+    "X#X"
   ],
   "result": {
-    "item": "generations_core:aether_leggings"
+    "item": "generations_core:copper_plate"
   },
   "show_notification": true
 }
