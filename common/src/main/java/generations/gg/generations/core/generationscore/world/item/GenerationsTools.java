@@ -45,6 +45,22 @@ public class GenerationsTools {
 			2,
 			4);
 
+	public static final ToolSet RUBY = ToolSet.create("ruby", () -> GenerationsTiers.RUBY,
+			1,
+			2,
+			3,
+			-2,
+			2,
+			4);
+
+	public static final ToolSet SAPPHIRE = ToolSet.create("sapphire", () -> GenerationsTiers.SAPPHIRE,
+			1,
+			2,
+			3,
+			-2,
+			2,
+			4);
+
 	public static final ToolSet CRYSTAL = ToolSet.create("crystal", () -> GenerationsTiers.CRYSTAL,
 			1,
 			2,
@@ -53,23 +69,13 @@ public class GenerationsTools {
 			2,
 			4);
 
-	public static  final ToolSet DAWN_STONE = ToolSet.create("dawn_stone", () -> GenerationsTiers.DAWN_STONE,
-			1,
-			2,
-			3,
+	public static final ToolSet SILICON = ToolSet.create("silicon", () -> GenerationsTiers.SILICON,
 			0,
-			2,
-			4,
-			new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1));
-
-	public static final ToolSet DUSK_STONE = ToolSet.create("dusk_stone", () -> GenerationsTiers.DUSK_STONE,
-			1,
-			2,
-			3,
 			0,
-			2,
-			4,
-			new PotionToolEffect(MobEffects.INVISIBILITY, 0, 6000, 1));
+			0,
+			0,
+			6,
+			0);
 
 	public static final ToolSet FIRE_STONE = ToolSet.create("fire_stone", () -> GenerationsTiers.FIRE_STONE,
 			1,
@@ -80,14 +86,23 @@ public class GenerationsTools {
 			4,
 			new TransformToolEffect(Blocks.WATER, Blocks.OBSIDIAN, 1));
 
-	public static final ToolSet ICE_STONE = ToolSet.create("ice_stone", () -> GenerationsTiers.ICE_STONE,
+	public static final ToolSet WATER_STONE = ToolSet.create("water_stone", () -> GenerationsTiers.WATER_STONE,
+			1,
+			2,
+			3,
+			-3,
+			2,
 			4,
-			5,
-			6,
+			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
+
+	public static final ToolSet THUNDER_STONE = ToolSet.create("thunder_stone", () -> GenerationsTiers.THUNDER_STONE,
+			1,
+			2,
+			3,
 			0,
-			5,
-			7,
-			new TransformToolEffect(Blocks.WATER, Blocks.ICE, 1));
+			2,
+			4,
+			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
 
 	public static final ToolSet LEAF_STONE = ToolSet.create("leaf_stone", () -> GenerationsTiers.LEAF_STONE,
 			1,
@@ -107,30 +122,6 @@ public class GenerationsTools {
 			4,
 			new PotionToolEffect(MobEffects.NIGHT_VISION, 0, 6000, 1));
 
-	public static final ToolSet RUBY = ToolSet.create("ruby", () -> GenerationsTiers.RUBY,
-			1,
-			2,
-			3,
-			-2,
-			2,
-			4);
-
-	public static final ToolSet SAPPHIRE = ToolSet.create("sapphire", () -> GenerationsTiers.SAPPHIRE,
-			1,
-			2,
-			3,
-			-2,
-			2,
-			4);
-
-	public static final ToolSet SILICON = ToolSet.create("silicon", () -> GenerationsTiers.SILICON,
-			0,
-			0,
-			0,
-			0,
-			6,
-			0);
-
 	public static final ToolSet SUN_STONE = ToolSet.create("sun_stone", () -> GenerationsTiers.SUN_STONE,
 			1,
 			2,
@@ -140,23 +131,32 @@ public class GenerationsTools {
 			4,
 			new PlaceItemToolEffect((BlockItem) Items.TORCH, 5)); //TODO: Replace with temp light source derived from tinker's construct's light source
 
-	public static final ToolSet THUNDER_STONE = ToolSet.create("thunder_stone", () -> GenerationsTiers.THUNDER_STONE,
+	public static final ToolSet DUSK_STONE = ToolSet.create("dusk_stone", () -> GenerationsTiers.DUSK_STONE,
 			1,
 			2,
 			3,
 			0,
 			2,
 			4,
-			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
+			new PotionToolEffect(MobEffects.INVISIBILITY, 0, 6000, 1));
 
-	public static final ToolSet WATER_STONE = ToolSet.create("water_stone", () -> GenerationsTiers.WATER_STONE,
+	public static  final ToolSet DAWN_STONE = ToolSet.create("dawn_stone", () -> GenerationsTiers.DAWN_STONE,
 			1,
 			2,
 			3,
-			-3,
+			0,
 			2,
 			4,
-			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
+			new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1));
+
+	public static final ToolSet ICE_STONE = ToolSet.create("ice_stone", () -> GenerationsTiers.ICE_STONE,
+			4,
+			5,
+			6,
+			0,
+			5,
+			7,
+			new TransformToolEffect(Blocks.WATER, Blocks.ICE, 1));
 
 	public static final RegistrySupplier<Item> DIAMOND_HAMMER = register("diamond_hammer", properties -> new GenerationsHammerItem(Tiers.DIAMOND, 5.0F, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> GOLDEN_HAMMER = register("golden_hammer", properties -> new GenerationsHammerItem(Tiers.GOLD, 6.0F, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);

@@ -40,11 +40,11 @@ public class GenerationsCreativeTabs {
     public static RegistrySupplier<CreativeModeTab> TOOLS_AND_UTILITIES = create("tools_and_utilities", () -> GenerationsItems.SUPER_ROD);
     public static RegistrySupplier<CreativeModeTab> COMBAT = create("combat", () -> GenerationsItems.CRYSTAL);
     public static RegistrySupplier<CreativeModeTab> INGREDIENTS = create("ingredients", () -> GenerationsItems.CRYSTAL);
-    public static RegistrySupplier<CreativeModeTab> AWARDS = create("awards", () -> GenerationsItems.RAINBOW_BADGE);
-    public static RegistrySupplier<CreativeModeTab> HELD_ITEMS = create("held_items", () -> GenerationsItems.ABILITY_SHIELD);
     public static RegistrySupplier<CreativeModeTab> CONSUMABLES = create("consumables", () -> GenerationsItems.ABILITY_CAPSULE);
+    public static RegistrySupplier<CreativeModeTab> HELD_ITEMS = create("held_items", () -> GenerationsItems.ABILITY_SHIELD);
     public static RegistrySupplier<CreativeModeTab> GIMMICK_ITEMS = create("gimmick_items", () -> GenerationsItems.VENUSAURITE);
     public static RegistrySupplier<CreativeModeTab> LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.JEWEL_OF_LIFE);
+    public static RegistrySupplier<CreativeModeTab> AWARDS = create("awards", () -> GenerationsItems.RAINBOW_BADGE);
 
     public static RegistrySupplier<CreativeModeTab> FORM_ITEMS = create("form_items", () -> GenerationsItems.METEORITE);
     public static RegistrySupplier<CreativeModeTab> POKEMAIL = create("pokemail", () -> GenerationsItems.POKEMAIL_AIR);

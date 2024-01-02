@@ -32,27 +32,27 @@ public class GenerationsArmor {
 		return ARMOR.register(name, () -> function.apply(of().arch$tab(tab)));
 	}
 
-	public static final ArmorSet AETHER = ArmorSet.create("aether", () -> GenerationsArmorMaterials.AETHER);
-	public static final ArmorSet AQUA = ArmorSet.create("aqua", () -> GenerationsArmorMaterials.AQUA);
-	public static final ArmorSet FLARE = ArmorSet.create("flare", () -> GenerationsArmorMaterials.FLARE);
-	public static final ArmorSet GALACTIC = ArmorSet.create("galactic", () -> GenerationsArmorMaterials.GALACTIC);
-	public static final ArmorSet MAGMA = ArmorSet.create("magma", () -> GenerationsArmorMaterials.MAGMA);
-	public static final ArmorSet NEO_PLASMA = ArmorSet.create("neo_plasma", () -> GenerationsArmorMaterials.NEO_PLASMA);
-	public static final ArmorSet PLASMA = ArmorSet.create("plasma", () -> GenerationsArmorMaterials.PLASMA);
-	public static final ArmorSet ROCKET = ArmorSet.create("rocket", () -> GenerationsArmorMaterials.ROCKET);
-	public static final ArmorSet SKULL = ArmorSet.create("skull", () -> GenerationsArmorMaterials.SKULL);
-	public static final ArmorSet ULTRA = ArmorSet.create("ultra", () -> GenerationsArmorMaterials.ULTRA);
 	public static final ArmorSet CRYSTALLIZED = ArmorSet.create("crystallized", () -> GenerationsArmorMaterials.CRYSTAL);
-	public static final ArmorSet DAWN_STONE = ArmorSet.create("dawn_stone", () -> GenerationsArmorMaterials.DAWN_STONE);
-	public static final ArmorSet DUSK_STONE = ArmorSet.create("dusk_stone", () -> GenerationsArmorMaterials.DUSK_STONE);
 	public static final ArmorSet FIRE_STONE = ArmorSet.create("fire_stone", () -> GenerationsArmorMaterials.FIRE_STONE);
+	public static final ArmorSet WATER_STONE = ArmorSet.create("water_stone", () -> GenerationsArmorMaterials.WATER_STONE);
+	public static final ArmorSet THUNDER_STONE = ArmorSet.create("thunder_stone", () -> GenerationsArmorMaterials.THUNDER_STONE);
 	public static final ArmorSet LEAF_STONE = ArmorSet.create("leaf_stone", () -> GenerationsArmorMaterials.LEAF_STONE);
-	public static final ArmorSet ICE_STONE = ArmorSet.create("ice_stone", () -> GenerationsArmorMaterials.ICE_STONE);
 	public static final ArmorSet MOON_STONE = ArmorSet.create("moon_stone", () -> GenerationsArmorMaterials.MOON_STONE);
 	public static final ArmorSet SUN_STONE = ArmorSet.create("sun_stone", () -> GenerationsArmorMaterials.SUN_STONE);
-	public static final ArmorSet THUNDER_STONE = ArmorSet.create("thunder_stone", () -> GenerationsArmorMaterials.THUNDER_STONE);
-	public static final ArmorSet WATER_STONE = ArmorSet.create("water_stone", () -> GenerationsArmorMaterials.WATER_STONE);
-
+	public static final ArmorSet SHINY_STONE = ArmorSet.create("shiny_stone", () -> GenerationsArmorMaterials.SHINY_STONE);
+	public static final ArmorSet DUSK_STONE = ArmorSet.create("dusk_stone", () -> GenerationsArmorMaterials.DUSK_STONE);
+	public static final ArmorSet DAWN_STONE = ArmorSet.create("dawn_stone", () -> GenerationsArmorMaterials.DAWN_STONE);
+	public static final ArmorSet ICE_STONE = ArmorSet.create("ice_stone", () -> GenerationsArmorMaterials.ICE_STONE);
+	public static final ArmorSet ROCKET = ArmorSet.create("rocket", () -> GenerationsArmorMaterials.ROCKET);
+	public static final ArmorSet MAGMA = ArmorSet.create("magma", () -> GenerationsArmorMaterials.MAGMA);
+	public static final ArmorSet AQUA = ArmorSet.create("aqua", () -> GenerationsArmorMaterials.AQUA);
+	public static final ArmorSet GALACTIC = ArmorSet.create("galactic", () -> GenerationsArmorMaterials.GALACTIC);
+	public static final ArmorSet PLASMA = ArmorSet.create("plasma", () -> GenerationsArmorMaterials.PLASMA);
+	public static final ArmorSet NEO_PLASMA = ArmorSet.create("neo_plasma", () -> GenerationsArmorMaterials.NEO_PLASMA);
+	public static final ArmorSet FLARE = ArmorSet.create("flare", () -> GenerationsArmorMaterials.FLARE);
+	public static final ArmorSet SKULL = ArmorSet.create("skull", () -> GenerationsArmorMaterials.SKULL);
+	public static final ArmorSet AETHER = ArmorSet.create("aether", () -> GenerationsArmorMaterials.AETHER);
+	public static final ArmorSet ULTRA = ArmorSet.create("ultra", () -> GenerationsArmorMaterials.ULTRA);
 
 	public record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, Supplier<ArmorMaterial> armorMaterial) {
 		public static ArmorSet create(String name, Supplier<ArmorMaterial> armorMaterial) {

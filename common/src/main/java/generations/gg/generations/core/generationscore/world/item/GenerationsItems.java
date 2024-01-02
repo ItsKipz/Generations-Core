@@ -111,10 +111,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MAX_POWDER = register("max_powder", Item::new, GenerationsCreativeTabs.CONSUMABLES);
     public static final RegistrySupplier<Item> MAX_SOUP = register("max_soup", Item::new, GenerationsCreativeTabs.CONSUMABLES);
         //Nectar
-    public static final RegistrySupplier<Item> PINK_NECTAR = register("pink_nectar", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
-    public static final RegistrySupplier<Item> PURPLE_NECTAR = register("purple_nectar", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
-    public static final RegistrySupplier<Item> RED_NECTAR = register("red_nectar", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
-    public static final RegistrySupplier<Item> YELLOW_NECTAR = register("yellow_nectar", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
+    public static final RegistrySupplier<Item> PINK_NECTAR = register("pink_nectar", Item::new, GenerationsCreativeTabs.CONSUMABLES);
+    public static final RegistrySupplier<Item> PURPLE_NECTAR = register("purple_nectar", Item::new, GenerationsCreativeTabs.CONSUMABLES);
+    public static final RegistrySupplier<Item> RED_NECTAR = register("red_nectar", Item::new, GenerationsCreativeTabs.CONSUMABLES);
+    public static final RegistrySupplier<Item> YELLOW_NECTAR = register("yellow_nectar", Item::new, GenerationsCreativeTabs.CONSUMABLES);
         //Powder
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SACRED_ASH = register("sacred_ash", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1).durability(1)), GenerationsCreativeTabs.CONSUMABLES);
         //Feather
@@ -993,10 +993,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> NPC_WAND = register("npc_wand", NpcWandItem::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", NpcPathTool::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> ZONE_WAND = register("zone_wand", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> BIKE_FRAME = register("bike_frame", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> BIKE_HANDLEBARS = register("bike_handlebars", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> BIKE_SEAT = register("bike_seat", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> BIKE_WHEEL = register("bike_wheel", Item::new, GenerationsCreativeTabs.UTILITY);
+    //public static final RegistrySupplier<Item> BIKE_FRAME = register("bike_frame", Item::new, GenerationsCreativeTabs.UTILITY);
+    //public static final RegistrySupplier<Item> BIKE_HANDLEBARS = register("bike_handlebars", Item::new, GenerationsCreativeTabs.UTILITY);
+    //public static final RegistrySupplier<Item> BIKE_SEAT = register("bike_seat", Item::new, GenerationsCreativeTabs.UTILITY);
+    //public static final RegistrySupplier<Item> BIKE_WHEEL = register("bike_wheel", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_IRON_DOOR = register("hidden_iron_door", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_WOODEN_DOOR = register("hidden_wooden_door", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_LEVER = register("hidden_lever", Item::new, GenerationsCreativeTabs.UTILITY);

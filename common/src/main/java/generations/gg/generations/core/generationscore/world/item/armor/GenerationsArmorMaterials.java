@@ -37,7 +37,8 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     MOON_STONE("moon_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.MOON_STONE),
     SUN_STONE("sun_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.SUN_STONE),
     THUNDER_STONE("thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.THUNDER_STONE),
-    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.WATER_STONE);
+    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.WATER_STONE),
+    SHINY_STONE("shiny_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.SHINY_STONE);
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
