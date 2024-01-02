@@ -85,10 +85,10 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.RICH_SOIL_3.get());
         dropSelf(GenerationsBlocks.RICH_SOIL_4.get());
 
-        add(GenerationsBlocks.POKEBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsBlocks.POKEBALL_CHEST.get()));
-        add(GenerationsBlocks.GREATBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsBlocks.GREATBALL_CHEST.get()));
-        add(GenerationsBlocks.ULTRABALL_CHEST.get(), createNameableBlockEntityTable(GenerationsBlocks.ULTRABALL_CHEST.get()));
-        add(GenerationsBlocks.MASTERBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsBlocks.MASTERBALL_CHEST.get()));
+        add(GenerationsUtilityBlocks.POKEBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.POKEBALL_CHEST.get()));
+        add(GenerationsUtilityBlocks.GREATBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.GREATBALL_CHEST.get()));
+        add(GenerationsUtilityBlocks.ULTRABALL_CHEST.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.ULTRABALL_CHEST.get()));
+        add(GenerationsUtilityBlocks.MASTERBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.MASTERBALL_CHEST.get()));
 
 
         addOreSetWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE_SET, GenerationsItems.MEGASTONE_SHARD.get());

@@ -6,9 +6,11 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.GenericChestBlockItem;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.entities.*;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericBlastFurnaceBlock;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericFurnaceBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericSmokerBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.*;
@@ -52,9 +54,12 @@ public class GenerationsUtilityBlocks {
 	////////Vending Machines
 	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of().strength(2.5f).randomTicks().noOcclusion()));
 	public static final RegistrySupplier<Block> SCARECROW = registerBlockItem("scarecrow", () -> new ScarecrowBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).dynamicShape().noOcclusion()));
-
 	//Containers
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
+	public static final RegistrySupplier<GenericChestBlock> POKEBALL_CHEST = registerChestBlockItem("pokeball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  9, 4, "pokeball_chest"));
+	public static final RegistrySupplier<GenericChestBlock> GREATBALL_CHEST = registerChestBlockItem("greatball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  9, 5, "greatball_chest"));
+	public static final RegistrySupplier<GenericChestBlock> ULTRABALL_CHEST = registerChestBlockItem("ultraball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  9, 6, "ultraball_chest"));
+	public static final RegistrySupplier<GenericChestBlock> MASTERBALL_CHEST = registerChestBlockItem("masterball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  12, 8, "masterball_chest"));
 	public static RegistrySupplier<BallLootBlock> POKE_BALL_LOOT = registerLoot("poke");
 	//public static RegistrySupplier<BallLootBlock> CITRINE_BALL_LOOT = registerLoot("citrine");
 	//public static RegistrySupplier<BallLootBlock> VERDANT_BALL_LOOT = registerLoot("verdant");
@@ -122,6 +127,12 @@ public class GenerationsUtilityBlocks {
 
 	private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> blockSupplier) {
 		return GenerationsUtils.registerBlock(UTILITY_BLOCKS, name, blockSupplier);
+	}
+
+	private static <T extends GenericChestBlock> RegistrySupplier<T> registerChestBlockItem(String name, Supplier<T> blockSupplier) {
+		RegistrySupplier<T> block = UTILITY_BLOCKS.register(name, blockSupplier);
+		register(name, properties -> new GenericChestBlockItem(block.get(), properties));
+		return block;
 	}
 
 	public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, Function<Function<DyeColor, DyedBlockItem<T, V>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {

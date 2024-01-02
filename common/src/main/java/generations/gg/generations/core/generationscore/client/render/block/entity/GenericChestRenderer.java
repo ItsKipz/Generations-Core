@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.Util;
@@ -44,7 +45,7 @@ public class GenericChestRenderer implements BlockEntityRenderer<GenericChestBlo
     public void render(GenericChestBlockEntity blockEntity, float partialTick, PoseStack poseStack, @NotNull MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         Level level = blockEntity.getLevel();
         boolean flag = level != null;
-        BlockState blockstate = flag ? blockEntity.getBlockState() : GenerationsBlocks.POKEBALL_CHEST.get().defaultBlockState().setValue(ChestBlock.FACING, Direction.SOUTH);
+        BlockState blockstate = flag ? blockEntity.getBlockState() : GenerationsUtilityBlocks.POKEBALL_CHEST.get().defaultBlockState().setValue(ChestBlock.FACING, Direction.SOUTH);
 
         poseStack.pushPose();
         float f = blockstate.getValue(ChestBlock.FACING).toYRot();

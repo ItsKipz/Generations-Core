@@ -188,10 +188,10 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerDoor(GenerationsBlocks.POKECENTER_DOOR.get());
 
 
-        pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, "poke_ball");
-        pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, "great_ball");
-        pokeBallChests(GenerationsBlocks.ULTRABALL_CHEST, "ultra_ball");
-        pokeBallChests(GenerationsBlocks.MASTERBALL_CHEST, "master_ball");
+        pokeBallChests(GenerationsUtilityBlocks.POKEBALL_CHEST, "poke_ball");
+        pokeBallChests(GenerationsUtilityBlocks.GREATBALL_CHEST, "great_ball");
+        pokeBallChests(GenerationsUtilityBlocks.ULTRABALL_CHEST, "ultra_ball");
+        pokeBallChests(GenerationsUtilityBlocks.MASTERBALL_CHEST, "master_ball");
 
         //Furnaces
         registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE);

@@ -112,10 +112,10 @@ public class TagsDatagen {
 
             tag(GenerationsBlockTags.POKEBALL_CHESTS)
                     .add(
-                            GenerationsBlocks.POKEBALL_CHEST.get(),
-                            GenerationsBlocks.GREATBALL_CHEST.get(),
-                            GenerationsBlocks.ULTRABALL_CHEST.get(),
-                            GenerationsBlocks.MASTERBALL_CHEST.get());
+                            GenerationsUtilityBlocks.POKEBALL_CHEST.get(),
+                            GenerationsUtilityBlocks.GREATBALL_CHEST.get(),
+                            GenerationsUtilityBlocks.ULTRABALL_CHEST.get(),
+                            GenerationsUtilityBlocks.MASTERBALL_CHEST.get());
             tag(Tags.Blocks.CHESTS).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
 
             GenerationsShrines.SHRINES.forEach(block -> tag(GenerationsBlockTags.SHRINES).add(block.get()));

@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
@@ -595,7 +596,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         /*
          * PokeChests
          */
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKEBALL_CHEST.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsUtilityBlocks.POKEBALL_CHEST.get())
                 .define('E', CobblemonItems.POKE_BALL.asItem())
                 .define('X', Blocks.CHEST)
                 .pattern("EEE")
@@ -604,31 +605,31 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(CobblemonItems.POKE_BALL.asItem()), has(CobblemonItems.POKE_BALL.asItem()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GREATBALL_CHEST.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsUtilityBlocks.GREATBALL_CHEST.get())
                 .define('E', CobblemonItems.GREAT_BALL.asItem())
-                .define('X', GenerationsBlocks.POKEBALL_CHEST.get())
+                .define('X', GenerationsUtilityBlocks.POKEBALL_CHEST.get())
                 .pattern("EEE")
                 .pattern("EXE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsBlocks.POKEBALL_CHEST.get()), has(GenerationsBlocks.POKEBALL_CHEST.get()))
+                .unlockedBy(getHasName(GenerationsUtilityBlocks.POKEBALL_CHEST.get()), has(GenerationsUtilityBlocks.POKEBALL_CHEST.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ULTRABALL_CHEST.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsUtilityBlocks.ULTRABALL_CHEST.get())
                 .define('E', CobblemonItems.ULTRA_BALL.asItem())
-                .define('X', GenerationsBlocks.GREATBALL_CHEST.get())
+                .define('X', GenerationsUtilityBlocks.GREATBALL_CHEST.get())
                 .pattern("EEE")
                 .pattern("EXE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsBlocks.GREATBALL_CHEST.get()), has(GenerationsBlocks.GREATBALL_CHEST.get()))
+                .unlockedBy(getHasName(GenerationsUtilityBlocks.GREATBALL_CHEST.get()), has(GenerationsUtilityBlocks.GREATBALL_CHEST.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MASTERBALL_CHEST.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsUtilityBlocks.MASTERBALL_CHEST.get())
                 .define('E', CobblemonItems.MASTER_BALL.asItem())
-                .define('X', GenerationsBlocks.ULTRABALL_CHEST.get())
+                .define('X', GenerationsUtilityBlocks.ULTRABALL_CHEST.get())
                 .pattern("EEE")
                 .pattern("EXE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsBlocks.ULTRABALL_CHEST.get()), has(GenerationsBlocks.ULTRABALL_CHEST.get()))
+                .unlockedBy(getHasName(GenerationsUtilityBlocks.ULTRABALL_CHEST.get()), has(GenerationsUtilityBlocks.ULTRABALL_CHEST.get()))
                 .save(consumer);
 
 

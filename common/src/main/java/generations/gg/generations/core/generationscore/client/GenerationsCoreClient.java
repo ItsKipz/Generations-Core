@@ -31,6 +31,7 @@ import generations.gg.generations.core.generationscore.world.item.MoveTeachingIt
 import generations.gg.generations.core.generationscore.world.item.NpcPathTool;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
@@ -175,10 +176,10 @@ public class GenerationsCoreClient {
             else return 0;
         });
 
-        registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
-        registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());
-        registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get());
-        registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST.get());
+        registerChestRenderer(GenerationsUtilityBlocks.POKEBALL_CHEST.get());
+        registerChestRenderer(GenerationsUtilityBlocks.GREATBALL_CHEST.get());
+        registerChestRenderer(GenerationsUtilityBlocks.ULTRABALL_CHEST.get());
+        registerChestRenderer(GenerationsUtilityBlocks.MASTERBALL_CHEST.get());
     }
 
     private static void registerChestRenderer(GenericChestBlock chest) {
