@@ -32,6 +32,7 @@ public enum GenerationsTiers implements Tier {
     SAPPHIRE(2, 300, 6.5F, 2.0F, 14, GenerationsItems.SAPPHIRE),
     SILICON(2, 100, 45F, 10F, 30, GenerationsItems.SILICON),
     SUN_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.SUN_STONE),
+    SHINY_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.SHINY_STONE),
     THUNDER_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.THUNDER_STONE),
     WATER_STONE(3, 1561, 8.0F, 3.0F, 10, () -> CobblemonItems.WATER_STONE);
 
@@ -79,7 +80,7 @@ public enum GenerationsTiers implements Tier {
         return switch (this) {
             case CHARGE_STONE, VOLCANIC_STONE -> BlockTags.NEEDS_STONE_TOOL;
             case AMETHYST, CRYSTAL, LEAF_STONE, RUBY, SAPPHIRE, SILICON -> BlockTags.NEEDS_IRON_TOOL;
-            case DAWN_STONE, DUSK_STONE, FIRE_STONE, ICE_STONE, MOON_STONE, SUN_STONE, THUNDER_STONE, WATER_STONE ->
+            case DAWN_STONE, DUSK_STONE, FIRE_STONE, ICE_STONE, MOON_STONE, SUN_STONE, THUNDER_STONE, WATER_STONE, SHINY_STONE ->
                     BlockTags.NEEDS_DIAMOND_TOOL;
         };
     }

@@ -131,6 +131,15 @@ public class GenerationsTools {
 			4,
 			new PlaceItemToolEffect((BlockItem) Items.TORCH, 5)); //TODO: Replace with temp light source derived from tinker's construct's light source
 
+	public static final ToolSet SHINY_STONE = ToolSet.create("shiny_stone", () -> GenerationsTiers.SHINY_STONE,
+			1,
+			2,
+			3,
+			0,
+			2,
+			4,
+			new PlaceItemToolEffect((BlockItem) Items.TORCH, 5)); //TODO: Replace with temp light source derived from tinker's construct's light source
+
 	public static final ToolSet DUSK_STONE = ToolSet.create("dusk_stone", () -> GenerationsTiers.DUSK_STONE,
 			1,
 			2,
