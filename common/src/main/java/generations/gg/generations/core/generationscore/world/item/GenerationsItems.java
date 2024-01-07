@@ -518,52 +518,52 @@ public class GenerationsItems {
     /**
      * Restoration Items
      */
-    public static final RegistrySupplier<Item> POTION = register("potion", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> SUPER_POTION = register("super_potion", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> HYPER_POTION = register("hyper_potion", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> MAX_POTION = register("max_potion", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> REVIVE = register("revive", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> MAX_REVIVE = register("max_revive", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> PP_UP = register("pp_up", PpUpItem::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> PARALYZE_HEAL = register("paralyze_heal", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> BURN_HEAL = register("burn_heal", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> ICE_HEAL = register("ice_heal", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> X_ATTACK = register("x_attack", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> X_DEFENSE = register("x_defense", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> X_SPECIAL_ATTACK = register("x_special_attack", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> X_SPECIAL_DEFENSE = register("x_special_defense", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> X_SPEED = register("x_speed", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> X_ACCURACY = register("x_accuracy", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> POTION = register("potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> SUPER_POTION = register("super_potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> HYPER_POTION = register("hyper_potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> MAX_POTION = register("max_potion", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> REVIVE = register("revive", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> MAX_REVIVE = register("max_revive", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> PP_UP = register("pp_up", PpUpItem::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> PARALYZE_HEAL = register("paralyze_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> BURN_HEAL = register("burn_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> ICE_HEAL = register("ice_heal", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> X_ATTACK = register("x_attack", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> X_DEFENSE = register("x_defense", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> X_SPECIAL_ATTACK = register("x_special_attack", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> X_SPECIAL_DEFENSE = register("x_special_defense", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> X_SPEED = register("x_speed", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> X_ACCURACY = register("x_accuracy", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, GenerationsCreativeTabs.REMOVE);
 
-    public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> YELLOW_JUICE = register("yellow_juice", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> BLUE_JUICE = register("blue_juice", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> GREEN_JUICE = register("green_juice", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> PINK_JUICE = register("pink_juice", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> COLORFUL_SHAKE = register("colorful_shake", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> PERILOUS_SOUP = register("perilous_soup", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> RARE_SODA = register("rare_soda", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> ULTRA_RARE_SODA = register("ultra_rare_soda", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> HEAL_POWDER = register("heal_powder", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> BASIC_SWEET_POKE_PUFF = register("basic_sweet_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> BASIC_CITRUS_POKE_PUFF = register("basic_citrus_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> BASIC_MINT_POKE_PUFF = register("basic_mint_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> BASIC_MOCHA_POKE_PUFF = register("basic_mocha_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
-    public static final RegistrySupplier<Item> BASIC_SPICE_POKE_PUFF = register("basic_spice_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> YELLOW_JUICE = register("yellow_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> BLUE_JUICE = register("blue_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> GREEN_JUICE = register("green_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> PINK_JUICE = register("pink_juice", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> COLORFUL_SHAKE = register("colorful_shake", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> PERILOUS_SOUP = register("perilous_soup", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> RARE_SODA = register("rare_soda", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> ULTRA_RARE_SODA = register("ultra_rare_soda", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> HEAL_POWDER = register("heal_powder", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> BASIC_SWEET_POKE_PUFF = register("basic_sweet_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> BASIC_CITRUS_POKE_PUFF = register("basic_citrus_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> BASIC_MINT_POKE_PUFF = register("basic_mint_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> BASIC_MOCHA_POKE_PUFF = register("basic_mocha_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
+    //public static final RegistrySupplier<Item> BASIC_SPICE_POKE_PUFF = register("basic_spice_poke_puff", Item::new, GenerationsCreativeTabs.REMOVE);
 
     /**
      * TM ITEMS
@@ -1014,12 +1014,6 @@ public class GenerationsItems {
     //public static final RegistrySupplier<Item> BIKE_HANDLEBARS = register("bike_handlebars", Item::new, GenerationsCreativeTabs.UTILITY);
     //public static final RegistrySupplier<Item> BIKE_SEAT = register("bike_seat", Item::new, GenerationsCreativeTabs.UTILITY);
     //public static final RegistrySupplier<Item> BIKE_WHEEL = register("bike_wheel", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> HIDDEN_IRON_DOOR = register("hidden_iron_door", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> HIDDEN_WOODEN_DOOR = register("hidden_wooden_door", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> HIDDEN_LEVER = register("hidden_lever", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> HIDDEN_PRESSURE_PLATE = register("hidden_pressure_plate", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> HIDDEN_CUBE = register("hidden_cube", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> HIDDEN_BUTTON = register("hidden_button", Item::new, GenerationsCreativeTabs.UTILITY);
 
     /**
      * Form Items
@@ -1509,6 +1503,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get()), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
     public static final RegistrySupplier<Item> ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
 
+    public static final RegistrySupplier<Item> HIDDEN_IRON_DOOR = register("hidden_iron_door", Item::new, GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> HIDDEN_WOODEN_DOOR = register("hidden_wooden_door", Item::new, GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> HIDDEN_LEVER = register("hidden_lever", Item::new, GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> HIDDEN_PRESSURE_PLATE = register("hidden_pressure_plate", Item::new, GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> HIDDEN_CUBE = register("hidden_cube", Item::new, GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
+    public static final RegistrySupplier<Item> HIDDEN_BUTTON = register("hidden_button", Item::new, GenerationsCreativeTabs.FUNCTIONAL_BLOCKS);
     private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound, int ticks) {
         return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, ticks), GenerationsCreativeTabs.UNIMPLEMENTED);
     }
@@ -1543,7 +1543,7 @@ public class GenerationsItems {
     public static RegistrySupplier<Item> createRibbon(String id) {
         return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.AWARDS)));
     }
-    
+
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Items");
         ITEMS.register();

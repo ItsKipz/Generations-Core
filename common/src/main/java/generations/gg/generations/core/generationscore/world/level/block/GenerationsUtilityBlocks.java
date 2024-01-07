@@ -94,6 +94,12 @@ public class GenerationsUtilityBlocks {
 	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");
 	public static RegistrySupplier<BallLootBlock> STRANGE_BALL_LOOT = registerLoot("strange");
 	//public static RegistrySupplier<BallLootBlock> ANCIENT_POKE_BALL_LOOT = registerLoot("ancient poke");
+	//public static RegistrySupplier<BallLootBlock> ANCIENT_CITRINE_BALL_LOOT = registerLoot("ancient citrine");
+	//public static RegistrySupplier<BallLootBlock> ANCIENT_VERDANT_BALL_LOOT = registerLoot("ancient verdant");
+	//public static RegistrySupplier<BallLootBlock> ANCIENT_AZURE_BALL_LOOT = registerLoot("ancient azure");
+	//public static RegistrySupplier<BallLootBlock> ANCIENT_ROSEATE_BALL_LOOT = registerLoot("ancient roseate");
+	//public static RegistrySupplier<BallLootBlock> ANCIENT_SLATE_BALL_LOOT = registerLoot("ancient slate");
+	//public static RegistrySupplier<BallLootBlock> ANCIENT_PREMIER_BALL_LOOT = registerLoot("ancient premier");
 	//public static RegistrySupplier<BallLootBlock> ANCIENT_GREAT_BALL_LOOT = registerLoot("ancient great");
 	//public static RegistrySupplier<BallLootBlock> ANCIENT_ULTRA_BALL_LOOT = registerLoot("ancient ultra");
 	//public static RegistrySupplier<BallLootBlock> FEATHER_BALL_LOOT = registerLoot("feather");
