@@ -82,20 +82,20 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.RUINS_WALL);
         registerBlockItem(GenerationsBlocks.DUSTY_RUINS_WALL);
 
-        registerBlockItem(GenerationsBlocks.CASTLE_PILLAR);
-        registerBlockItem(GenerationsBlocks.BROKEN_CASTLE_PILLAR);
+        registerPillar(GenerationsBlocks.CASTLE_PILLAR);
+        registerPillar(GenerationsBlocks.BROKEN_CASTLE_PILLAR);
 
-        registerBlockItem(GenerationsBlocks.PRISMARINE_PILLAR);
-        registerBlockItem(GenerationsBlocks.BROKEN_PRISMARINE_PILLAR);
+        registerPillar(GenerationsBlocks.PRISMARINE_PILLAR);
+        registerPillar(GenerationsBlocks.BROKEN_PRISMARINE_PILLAR);
 
-        registerBlockItem(GenerationsBlocks.DARK_PRISMARINE_PILLAR);
-        registerBlockItem(GenerationsBlocks.BROKEN_DARK_PRISMARINE_PILLAR);
+        registerPillar(GenerationsBlocks.DARK_PRISMARINE_PILLAR);
+        registerPillar(GenerationsBlocks.BROKEN_DARK_PRISMARINE_PILLAR);
 
-        registerBlockItem(GenerationsBlocks.ICE_PILLAR);
-        registerBlockItem(GenerationsBlocks.BROKEN_ICE_PILLAR);
+        registerPillar(GenerationsBlocks.ICE_PILLAR);
+        registerPillar(GenerationsBlocks.BROKEN_ICE_PILLAR);
 
-        registerBlockItem(GenerationsBlocks.HAUNTED_PILLAR);
-        registerBlockItem(GenerationsBlocks.BROKEN_HAUNTED_PILLAR);
+        registerPillar(GenerationsBlocks.HAUNTED_PILLAR);
+        registerPillar(GenerationsBlocks.BROKEN_HAUNTED_PILLAR);
 
         registerBlockItem(GenerationsBlocks.DAWN_STONE_BLOCK);
         registerBlockItem(GenerationsBlocks.DUSK_STONE_BLOCK);
@@ -228,6 +228,19 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerNoModel(GenerationsUtilityBlocks.HEALER.block());
 
         registerBlockItemParticle(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.BENCH.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.COUCH.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.BUSH.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.HDTV.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.DESK.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.FRIDGE.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.POKEBALL_PILLAR.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.SWITCH.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations");
@@ -453,6 +466,12 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     private void registerBlockItem(RegistrySupplier<Block> block) {registerBlockItem(block.get());}
 
     private void registerBlockItem(Block block) {simpleBlockWithItem(block, cubeAll(block));}
+
+    private void registerPillar(RegistrySupplier<? extends Block> block) {
+        BlockModelBuilder model = models().withExistingParent(block.getId().getPath(), GenerationsCore.id("block/pillar")).texture("base", GenerationsCore.id("block/" + block.getId().getPath()));
+        simpleBlockWithItem(block.get(), model);
+        dropSelfList.add(block.get());
+    }
 
     private void unownBlock(RegistrySupplier<? extends Block> block) {
         BlockModelBuilder model = models().cubeBottomTop(block.getId().getPath(),
